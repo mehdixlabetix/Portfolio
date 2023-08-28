@@ -30,16 +30,26 @@ code {
 #projects-section{
     margin-left:40%;
 }
+#avatar{ transition: transform 0.5s;
+}
+#avatar:hover{
+    transform: scale(1.4);
+}
 #project{
 
     background-image:url("../public/images/colors.jpg");
     background-size: cover;
+    transition: transform 0.5s;
 ;/*linear-gradient(#DFF2D8 ,#C6DEA6);
    box-shadow: rgb(128, 128, 128) 1px 1px 3px 1px;*/
+}
+#project:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 #skills-head{
     margin-left: 43%;
 }
+
 @media only screen and (max-width: 768px){
     *{
         max-width:100%
