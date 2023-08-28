@@ -18,7 +18,7 @@ const LandingSection = () => {
                     src={avatarsrc}
                     alt="Mehdi Cherif"
                 />
-                <Heading size="xl" style={{ whiteSpace: 'pre-wrap' }}>
+                <Heading marginTop="25px" style={{ fontFamily: 'Cinzel' ,whiteSpace: 'pre-wrap' }} size="xl" >
                     <center>
 
                         {useText(greeting + '\n' + bio1 + '\n' + bio2)}
