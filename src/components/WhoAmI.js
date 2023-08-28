@@ -5,15 +5,16 @@ import FullScreenSection from './FullScreenSection'
 const WhoAmI = () => {
     return (
         <FullScreenSection justifyContent="center" alignItems="center">
-            <VStack>
+            <VStack id="whoami">
                 <Heading
                     size="3xl"
+                    id="whoami-heading"
                     paddingBottom="80px"
                     style={{ whiteSpace: 'pre' }}
                 >
-                    <center> Who I really am?</center>
+                    <center> Who am I really ?</center>
                 </Heading>
-                <Text style={{ fontFamily: 'Comfortaa' }} fontSize="2xl">
+                <Text id="whoami-text" style={{ fontFamily: 'Comfortaa' }} fontSize="2xl">
                     {' '}
                     I'm a student studying software engineering at INSAT. I have
                     a passion, for both AI and full stack development. I find
@@ -28,12 +29,12 @@ const WhoAmI = () => {
                 </Text>
                 <HStack spacing={5}>
 
-                    <Text fontSize="5xl" >&#x1F4BB;</Text>
-                    <Text fontSize="5xl" >&#x1F916;</Text>
-                    <Text fontSize="5xl" >&#x1F603;</Text>
-                    <Text fontSize="5xl" >&#x2B50;</Text>
-                    <Text fontSize="5xl" >&#x1F30C;</Text>
-                    <Text fontSize="5xl" >&#x1F525;</Text>
+                    <Text  id="whoami-emojis" fontSize="5xl" >&#x1F4BB;</Text>
+                    <Text  id="whoami-emojis" fontSize="5xl" >&#x1F916;</Text>
+                    <Text  id="whoami-emojis" fontSize="5xl" >&#x1F603;</Text>
+                    <Text  id="whoami-emojis" fontSize="5xl" >&#x2B50;</Text>
+                    <Text  id="whoami-emojis" fontSize="5xl" >&#x1F30C;</Text>
+                    <Text  id="whoami-emojis" fontSize="5xl" >&#x1F525;</Text>
 
                 </HStack>
             </VStack>

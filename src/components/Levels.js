@@ -52,11 +52,12 @@ const Levels = () => {
         <FullScreenSection p={8} alignItems="flex-start" spacing={50}>
             <Card id="skills" borderRadius="40px">
                 <CardBody>
-                    <Heading style={{ marginLeft: '40%' }} as="h1" size="3xl">
+                    <Heading style={{ marginLeft: '33%' }} as="h1" size="3xl">
                         Skills
                     </Heading>
 
                     <Box
+                        id="skills-container"
                         display="grid"
                         gridtemplateRows="repeat(4, 200px)"
                         gridTemplateColumns="repeat(2,500px)"
@@ -75,11 +76,12 @@ const Levels = () => {
                                         alignItems="center"
                                         spacing={5}
                                     >
-                                        <Text as="b" fontSize="3xl">
+                                        <Text as="b" id="skills-title" fontSize="3xl">
                                             {skill.title}
                                         </Text>
 
                                         <Progress
+                                            id="skills-progress"
                                             borderRadius="10px"
                                             value={skill.progress}
                                             height="7"

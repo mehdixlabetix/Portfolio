@@ -45,6 +45,7 @@ const ProjectsSection = () => {
                 Featured Projects
             </Heading>
             <Box
+                id="projects-container"
                 display="grid"
                 gridTemplateColumns="repeat(2,minmax(0,1fr))"
                 gridGap={20}

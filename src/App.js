@@ -19,8 +19,9 @@ function App() {
                         backgroundImage:
                             'linear-gradient(#f4985a, #f1515e,#1dbde6)',
                     }}
+                    id="main"
                 >
-                    <Header />
+                    <Header  />
                     <LandingSection />
                     <WhoAmI />
                     <Levels />

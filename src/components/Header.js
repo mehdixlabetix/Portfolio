@@ -55,6 +55,7 @@ const Header = () => {
 
     return (
         <Box
+            id ="header"
             position="fixed"
             top={0}
             left={0}
@@ -68,12 +69,13 @@ const Header = () => {
         >
             <Box color="white" maxWidth="1280px" margin="0 auto">
                 <HStack
+
                     px={16}
                     py={4}
                     justifyContent="space-between"
                     alignItems="center"
                 >
-                    <nav>
+                    <nav  id="header-socials">
                         <HStack spacing={8}>
                             {
                                 /* Add social media links based on the `socials` data */
@@ -90,7 +92,7 @@ const Header = () => {
                             }
                         </HStack>
                     </nav>
-                    <nav>
+                    <nav id="header-links">
                         <HStack spacing={8}>
                             {/* Add links to Projects and Contact me section */}
                             <a href="#contact-me-section">Contact me</a>
