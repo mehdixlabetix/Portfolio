@@ -14,7 +14,7 @@ const Carte = ({ title, description, imageSrc,link}) => {
                 <Image src={imageSrc} borderRadius="md" />
             </CardHeader>
 
-            <CardBody>
+            <CardBody id="project-body">
                 <Stack mt="6" spacing="3">
                     <Heading size="md">{title}</Heading>
                     <Text>{description}</Text>

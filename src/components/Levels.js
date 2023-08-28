@@ -49,10 +49,10 @@ const skills = [
 
 const Levels = () => {
     return (
-        <FullScreenSection p={8} alignItems="flex-start" spacing={50}>
+        <FullScreenSection p={8} id="skills-gen" spacing={50}>
             <Card id="skills" borderRadius="40px">
                 <CardBody>
-                    <Heading style={{ marginLeft: '33%' }} as="h1" size="3xl">
+                    <Heading id="skills-head" as="h1" size="3xl">
                         Skills
                     </Heading>
 
@@ -91,6 +91,7 @@ const Levels = () => {
                                             width="490px"
                                         >
                                             <ProgressLabel
+                                                id="skills-progress-label"
                                                 fontSize="2xl"
                                                 color="black"
                                             >

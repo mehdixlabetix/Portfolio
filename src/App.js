@@ -17,7 +17,7 @@ function App() {
                 <main
                     style={{
                         backgroundImage:
-                            'linear-gradient(#f4985a, #f1515e,#1dbde6)',
+                            'linear-gradient(#f4985a, #f1515e)',
                     }}
                     id="main"
                 >

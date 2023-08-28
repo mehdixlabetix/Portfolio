@@ -46,11 +46,11 @@ const LandingSection = () => {
     })
     return (
         <FullScreenSection py={16} spacing={8}>
-            <VStack id="contact-me" w="1024px" p={32} alignItems="flex-start">
+            <VStack id="contact-me" w="1024px" p={32} >
                 <Heading  as="h1" id="contact-me-section">
                     Contact me
                 </Heading>
-                <Box p={6} rounded="md" w="100%">
+                <Box id="contact-me-form" p={6} rounded="md" w="100%">
                     <form onSubmit={formik.handleSubmit}>
                         <VStack spacing={4}>
                             <FormControl
