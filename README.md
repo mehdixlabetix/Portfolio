@@ -22,7 +22,7 @@ This repository houses the code for my personal portfolio website built using Re
 - **React.js**: Building interactive and dynamic user interfaces.
 - **Node.js**: Backend support for contact and interaction features.
 - **CSS/SASS**: Styling the portfolio with modern and responsive design.
-- **Deployment**: Hosted on [Vercel](https://vercel.com) for continuous integration and deployment.
+- **Deployment**: Hosted on [Vercel](https://mehdixportfolio.vercel.app) for continuous integration and deployment.
 
 ## Installation
 
@@ -37,7 +37,7 @@ This repository houses the code for my personal portfolio website built using Re
 
 ## Deployment
 
-This project is deployed using [Vercel](https://vercel.com). Every push to the `main` branch triggers an automatic deployment to Vercel.
+This project is deployed using [Vercel](https://mehdixportfolio.vercel.app). Every push to the `main` branch triggers an automatic deployment to Vercel.
 
 ## Contact
 
