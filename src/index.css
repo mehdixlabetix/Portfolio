@@ -22,7 +22,10 @@ code {
 }
 #skills{
     background-color:#F5EDDC ;
+    box-shadow: black 5px 1px 10px 1px;
+
 }
 #project{
-    background-image:linear-gradient(,#FFFAE7,#EDEDED,#DBC8AC) ;
+    background-image:linear-gradient(#FFFAE7,#EDEDED,#DBC8AC) ;
+    box-shadow: #DBC8AC 1px 1px 10px 0px;
 }
