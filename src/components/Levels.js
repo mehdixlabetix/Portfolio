@@ -50,7 +50,7 @@ const skills = [
 const Levels = () => {
     return (
         <FullScreenSection p={8} alignItems="flex-start" spacing={50}>
-            <Card borderRadius="40px">
+            <Card id="skills" borderRadius="40px">
                 <CardBody>
                     <Heading style={{ marginLeft: '40%' }} as="h1" size="3xl">
                         Skills

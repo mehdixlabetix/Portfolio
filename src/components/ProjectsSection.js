@@ -51,6 +51,7 @@ const ProjectsSection = () => {
             >
                 {projects.map((project) => (
                     <Carte
+
                         key={project.title}
                         title={project.title}
                         description={project.description}

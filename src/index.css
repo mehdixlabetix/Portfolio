@@ -20,3 +20,9 @@ code {
     justify-content: center;
     align-items: center;
 }
+#skills{
+    background-color:#F5EDDC ;
+}
+#project{
+    background-image:linear-gradient(,#FFFAE7,#EDEDED,#DBC8AC) ;
+}

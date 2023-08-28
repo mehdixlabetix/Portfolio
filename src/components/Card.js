@@ -9,7 +9,7 @@ const Carte = ({ title, description, imageSrc,link}) => {
     // You should be able to implement the component with the elements imported above.
     // Feel free to import other UI components from Chakra UI if you wish to.
     return (
-        <Card  borderRadius="10px">
+        <Card id="project" borderRadius="10px">
             <CardHeader>
                 <Image src={imageSrc} borderRadius="md" />
             </CardHeader>
