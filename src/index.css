@@ -21,7 +21,9 @@ code {
     align-items: center;
 }
 #skills{
-    background-color:#2A9D8F ;
+    /*background-color:#2A9D8F ;*/
+    background-image: url("../public/images/colors.jpg");
+    background-size: cover;
     box-shadow: black 5px 1px 10px 1px;
 
 }
@@ -29,12 +31,11 @@ code {
     margin-left:40%;
 }
 #project{
-    /*
-    background-image: linear-gradient(#423629,#2A9D8F);
-    */
-    background-image: linear-gradient(#DFF2D8 ,#C6DEA6);
 
-            box-shadow: rgb(128, 128, 128) 1px 1px 3px 1px;
+    background-image:url("../public/images/colors.jpg");
+    background-size: cover;
+;/*linear-gradient(#DFF2D8 ,#C6DEA6);
+   box-shadow: rgb(128, 128, 128) 1px 1px 3px 1px;*/
 }
 #skills-head{
     margin-left: 43%;
