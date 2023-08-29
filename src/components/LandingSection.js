@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Heading, VStack } from '@chakra-ui/react'
+import { Image, Heading,Text, VStack } from '@chakra-ui/react'
 import FullScreenSection from './FullScreenSection'
 import useText from '../hooks/useText'
 
@@ -12,6 +12,7 @@ const LandingSection = () => {
     return (
         <FullScreenSection justifyContent="center" alignItems="center">
             <VStack spcaing={10}>
+                <Text id="egg">you found the easter egg &#x1F389;</Text>
                 <Image
                     id="avatar"
                     borderRadius="full"

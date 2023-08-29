@@ -6,6 +6,7 @@ import {
     Heading,
     Text,
     HStack,
+    Image,
     VStack,
     ProgressLabel,
     Card,
@@ -16,34 +17,42 @@ const skills = [
     {
         title: 'React ',
         progress: 80,
+        getImageSrc: () => require('../images/React.png'),
     },
     {
         title: 'NestJS ',
         progress: 60,
+        getImageSrc: () => require('../images/nestjs.png'),
     },
     {
         title: 'ROS ',
         progress: 80,
+        getImageSrc: () => require('../images/ros.png'),
     },
     {
         title: 'C++ ',
         progress: 90,
+        getImageSrc: () => require('../images/C.png'),
     },
     {
         title: 'Python ',
         progress: 95,
+        getImageSrc: () => require('../images/python.png'),
     },
     {
         title: 'Java',
         progress: 60,
+        getImageSrc: () => require('../images/java.png'),
     },
     {
         title: 'Machine Learning',
         progress: 70,
+        getImageSrc: () => require('../images/ML.png'),
     },
     {
         title: 'Deep Learning',
         progress: 60,
+        getImageSrc: () => require('../images/DL.png'),
     },
 ]
 
@@ -59,9 +68,9 @@ const Levels = () => {
                     <Box
                         id="skills-container"
                         display="grid"
-                        gridtemplateRows="repeat(4, 200px)"
                         gridTemplateColumns="repeat(2,500px)"
                         gridGap={8}
+                        alignItems="flex-end"
                         paddingBottom="50px"
                         paddingTop="30px"
                     >
@@ -72,13 +81,25 @@ const Levels = () => {
                             .map((skill) => {
                                 return (
                                     <VStack
-                                        justifyContent="space-between"
                                         alignItems="center"
                                         spacing={5}
+                                        key={skill.title}
                                     >
-                                        <Text as="b" id="skills-title" fontSize="3xl">
+
+                                          <HStack spacing={25} alignItems="self-end" >
+                                              <Image
+                                                  id="logos"
+                                                  objectPosition="center"
+                                                objectFit="contain"
+                                                boxSize='70px'
+                                                src={skill.getImageSrc()}
+                                                alt={skill.title}
+                                            />
+                                              <Text  as="b" id="skills-title" fontSize="3xl" >
                                             {skill.title}
-                                        </Text>
+                                              </Text>
+                                          </HStack>
+
 
                                         <Progress
                                             id="skills-progress"

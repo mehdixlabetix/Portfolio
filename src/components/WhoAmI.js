@@ -1,22 +1,24 @@
 import React from 'react'
 import {Heading, VStack, Text, HStack} from '@chakra-ui/react'
 import FullScreenSection from './FullScreenSection'
+import ReactPlayer from 'react-player'
 
 const WhoAmI = () => {
+
     return (
         <FullScreenSection justifyContent="center" alignItems="center">
-            <VStack id="whoami">
+            <VStack id="whoami" >
                 <Heading
                     size="3xl"
                     id="whoami-heading"
-                    paddingBottom="80px"
+                    paddingBottom="50px"
                     style={{ whiteSpace: 'pre' }}
                 >
                     <center> Who am I really ?</center>
                 </Heading>
-                <Text id="whoami-text" style={{ fontFamily: 'Comfortaa' }} fontSize="2xl">
+                <Text id="whoami-text" style={{ fontFamily: 'Comfortaa' }} fontSize="2xl" paddingBottom="20px" paddingLeft="5px">
                     {' '}
-                    I'm a student studying software engineering at INSAT. I have
+                      I'm a student studying software engineering at INSAT. I have
                     a passion, for both AI and full stack development. I find
                     joy in working on the front and back end aspects of software
                     development all while continuously learning and embracing
