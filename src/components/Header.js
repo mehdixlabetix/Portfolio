@@ -2,15 +2,13 @@ import React, { useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faEnvelope,
-    faSchoolCircleXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import {
     faGithub,
     faLinkedin,
-    faMedium,
-    faStackOverflow,
 } from '@fortawesome/free-brands-svg-icons'
 import { Box, HStack } from '@chakra-ui/react'
+import Scroll from "./Scroll";
 
 const socials = [
     {   name:"Mail",
@@ -28,6 +26,9 @@ const socials = [
 ]
 
 const Header = () => {
+
+
+
     let translation = useRef(null)
     let prevScrollY = 0
     const handleScroll = () => {
@@ -62,8 +63,8 @@ const Header = () => {
             right={0}
             translateY={0}
             transitionProperty="transform"
-            transitionDuration=".3s"
-            transitionTimingFunction="ease-in-out"
+            transitionDuration=".1s"
+            transitionTimingFunction="ease"
             backgroundColor="#18181b"
             ref={translation}
         >
@@ -100,7 +101,9 @@ const Header = () => {
                     </nav>
                 </HStack>
             </Box>
+
         </Box>
+
     )
 }
 export default Header

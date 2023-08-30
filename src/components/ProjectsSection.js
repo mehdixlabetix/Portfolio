@@ -1,7 +1,8 @@
 import React from 'react'
 import FullScreenSection from './FullScreenSection'
-import { Box, Heading } from '@chakra-ui/react'
+import {Box, Heading, VStack} from '@chakra-ui/react'
 import Carte from './Card'
+import {useInView} from "framer-motion";
 
 const projects = [
     {
@@ -35,8 +36,16 @@ const projects = [
 ]
 
 const ProjectsSection = () => {
+    const ref = React.useRef(null);
+    const isInView = useInView(ref,{once:true});
     return (
         <FullScreenSection p={8} alignItems="flex-start" spacing={8}>
+            <VStack spacing={8}
+                    ref={ref}
+                    style={{
+                        transform: isInView ? "none" : "translateX(-200px)",
+                        opacity: isInView ? 1 : 0,
+                        transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"}}>
             <Heading
 
                 as="h1"
@@ -61,6 +70,7 @@ const ProjectsSection = () => {
                     />
                 ))}
             </Box>
+            </VStack>
         </FullScreenSection>
     )
 }

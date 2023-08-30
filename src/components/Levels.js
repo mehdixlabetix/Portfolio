@@ -12,6 +12,7 @@ import {
     Card,
     CardBody,
 } from '@chakra-ui/react'
+import {useInView} from "framer-motion";
 
 const skills = [
     {
@@ -57,9 +58,16 @@ const skills = [
 ]
 
 const Levels = () => {
+    const ref = React.useRef(null);
+    const isInView = useInView(ref,{once:true});
     return (
         <FullScreenSection p={8} id="skills-gen" spacing={50}>
-            <Card id="skills" borderRadius="40px">
+            <Card ref = {ref}
+                  style={{
+                      transform: isInView ? "none" : "translateX(200px)",
+                      opacity: isInView ? 1 : 0,
+                      transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"}}
+                  id="skills" borderRadius="40px">
                 <CardBody>
                     <Heading id="skills-head" as="h1" size="3xl">
                         Skills

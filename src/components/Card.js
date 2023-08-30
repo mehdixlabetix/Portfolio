@@ -30,6 +30,7 @@ const Carte = ({ title, description, imageSrc,link}) => {
                         </HStack></a>
             </CardFooter>
         </Card>
+
     )
 }
 

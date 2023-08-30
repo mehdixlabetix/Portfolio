@@ -1,13 +1,20 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import {Heading, VStack, Text, HStack} from '@chakra-ui/react'
 import FullScreenSection from './FullScreenSection'
 import ReactPlayer from 'react-player'
+import Scroll from "./Scroll";
+import {useInView} from "framer-motion";
 
 const WhoAmI = () => {
-
+   const ref=useRef(null)
+    const isInView = useInView(ref,{once:true});
     return (
         <FullScreenSection justifyContent="center" alignItems="center">
-            <VStack id="whoami" >
+            <VStack id="whoami" ref={ref} style={{
+                transform: isInView ? "none" : "translateX(-200px)",
+                opacity: isInView ? 1 : 0,
+                transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s" }}  >
+
                 <Heading
                     size="3xl"
                     id="whoami-heading"
@@ -16,7 +23,7 @@ const WhoAmI = () => {
                 >
                     <center> Who am I really ?</center>
                 </Heading>
-                <Text id="whoami-text" style={{ fontFamily: 'Comfortaa' }} fontSize="2xl" paddingBottom="20px" paddingLeft="5px">
+                <Text   id="whoami-text" style={{ fontFamily: 'Comfortaa'}} fontSize="2xl" paddingBottom="20px" paddingLeft="5px">
                     {' '}
                       I'm a student studying software engineering at INSAT. I have
                     a passion, for both AI and full stack development. I find
