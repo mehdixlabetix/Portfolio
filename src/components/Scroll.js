@@ -35,7 +35,7 @@ const Scroll = () =>{
         left: "0",
         right: "0",
         height: "10px",
-        background: "var(--pink)",
+        background: "#692b43",
         transformOrigin: "0%",
         zIndex: "3"}} />;
 }
