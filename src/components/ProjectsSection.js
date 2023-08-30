@@ -45,7 +45,7 @@ const ProjectsSection = () => {
                     style={{
                         transform: isInView ? "none" : "translateX(-200px)",
                         opacity: isInView ? 1 : 0,
-                        transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"}}>
+                        transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s"}}>
             <Heading
 
                 as="h1"
