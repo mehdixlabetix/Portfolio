@@ -46,8 +46,8 @@ const LandingSection = () => {
     })
     return (
         <FullScreenSection py={16} spacing={8}>
-            <VStack id="contact-me" w="1024px" p={32} >
-                <Heading  as="h1" id="contact-me-section">
+            <VStack id="contact-me" w="1024px" p={32}>
+                <Heading as="h1" id="contact-me-section">
                     Contact me
                 </Heading>
                 <Box id="contact-me-form" p={6} rounded="md" w="100%">

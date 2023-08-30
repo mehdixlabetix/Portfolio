@@ -12,7 +12,7 @@ import {
     Card,
     CardBody,
 } from '@chakra-ui/react'
-import {useInView} from "framer-motion";
+import { useInView } from 'framer-motion'
 
 const skills = [
     {
@@ -58,16 +58,64 @@ const skills = [
 ]
 
 const Levels = () => {
-    const ref = React.useRef(null);
-    const isInView = useInView(ref,{once:true});
+
+    const skillsList = React.useMemo(
+        () =>
+            skills
+                .sort(function (a, b) {
+                    return b.progress - a.progress
+                })
+                .map((skill) => {
+                    return (
+                        <VStack
+                            alignItems="center"
+                            spacing={5}
+                            key={skill.title}
+                        >
+                            <HStack spacing={25} alignItems="self-end">
+                                <Image
+                                    id="logos"
+                                    objectPosition="center"
+                                    objectFit="contain"
+                                    boxSize="70px"
+                                    src={skill.getImageSrc()}
+                                    alt={skill.title}
+                                />
+                                <Text as="b" id="skills-title" fontSize="3xl">
+                                    {skill.title}
+                                </Text>
+                            </HStack>
+
+                            <Progress
+                                id="skills-progress"
+                                borderRadius="10px"
+                                value={skill.progress}
+                                height="7"
+                                min="0"
+                                max="100"
+                                colorScheme="cyan"
+                                width="490px"
+                            >
+                                <ProgressLabel
+                                    id="skills-progress-label"
+                                    fontSize="2xl"
+                                    color="black"
+                                >
+                                    {skill.progress + '%'}
+                                </ProgressLabel>
+                            </Progress>
+                        </VStack>
+                    )
+                }),
+        [skills]
+    )
     return (
         <FullScreenSection p={8} id="skills-gen" spacing={50}>
-            <Card ref = {ref}
-                  style={{
-                      transform: isInView ? "none" : "translateX(200px)",
-                      opacity: isInView ? 1 : 0,
-                      transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.85s"}}
-                  id="skills" borderRadius="40px">
+            <Card
+
+                id="skills"
+                borderRadius="40px"
+            >
                 <CardBody>
                     <Heading id="skills-head" as="h1" size="3xl">
                         Skills
@@ -82,54 +130,9 @@ const Levels = () => {
                         paddingBottom="50px"
                         paddingTop="30px"
                     >
-                        {skills
-                            .sort(function (a, b) {
-                                return b.progress - a.progress
-                            })
-                            .map((skill) => {
-                                return (
-                                    <VStack
-                                        alignItems="center"
-                                        spacing={5}
-                                        key={skill.title}
-                                    >
-
-                                          <HStack spacing={25} alignItems="self-end" >
-                                              <Image
-                                                  id="logos"
-                                                  objectPosition="center"
-                                                objectFit="contain"
-                                                boxSize='70px'
-                                                src={skill.getImageSrc()}
-                                                alt={skill.title}
-                                            />
-                                              <Text  as="b" id="skills-title" fontSize="3xl" >
-                                            {skill.title}
-                                              </Text>
-                                          </HStack>
-
-
-                                        <Progress
-                                            id="skills-progress"
-                                            borderRadius="10px"
-                                            value={skill.progress}
-                                            height="7"
-                                            min="0"
-                                            max="100"
-                                            colorScheme="cyan"
-                                            width="490px"
-                                        >
-                                            <ProgressLabel
-                                                id="skills-progress-label"
-                                                fontSize="2xl"
-                                                color="black"
-                                            >
-                                                {skill.progress + '%'}
-                                            </ProgressLabel>
-                                        </Progress>
-                                    </VStack>
-                                )
-                            })}
+                        {skillsList.map((skill) => {
+                            return <Box key={skill.title}>{skill}</Box>
+                        })}
                     </Box>
                 </CardBody>
             </Card>

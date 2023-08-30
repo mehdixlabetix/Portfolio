@@ -1,8 +1,8 @@
 import React from 'react'
 import FullScreenSection from './FullScreenSection'
-import {Box, Heading, VStack} from '@chakra-ui/react'
+import { Box, Heading, VStack } from '@chakra-ui/react'
 import Carte from './Card'
-import {useInView} from "framer-motion";
+import { useInView } from 'framer-motion'
 
 const projects = [
     {
@@ -10,66 +10,62 @@ const projects = [
         description:
             'Predicting CO2 emissions in Rwanda using machine learning. The notebook imports a dataset of historical CO2 emissions data and uses a variety of machine learning models to predict future emissions.',
         getImageSrc: () => require('../images/CO2.jpg'),
-        link: "https://github.com/mehdixlabetix/CO2EmissionRawanda"
+        link: 'https://github.com/mehdixlabetix/CO2EmissionRawanda',
     },
     {
         title: 'Aerobotix Form',
         description:
             'This is a web form built using React and connected to Firebase, designed for the Aerobotix Robotics Club. The form allows users to submit their information for membership or any other relevant purposes.',
         getImageSrc: () => require('../images/aerobotix.jpg'),
-        link: "https://github.com/mehdixlabetix/Aerobotix"
+        link: 'https://github.com/mehdixlabetix/Aerobotix',
     },
     {
         title: 'Tunisian Water Level Prediction',
         description:
             'A Time Series model that predicts the level of water in multiple dams around the Tunisian country',
         getImageSrc: () => require('../images/dam2.jpg'),
-        link: "https://github.com/mehdixlabetix/Weather-Time-Series"
+        link: 'https://github.com/mehdixlabetix/Weather-Time-Series',
     },
     {
         title: 'Smart Traffic Light',
         description:
             'A Traffic Signal Optimization System is a project aimed at tackling the issue of time waste in traffic by implementing an intelligent system that optimizes traffic signal timings.',
         getImageSrc: () => require('../images/nrw.png'),
-        link:"https://github.com/mehdixlabetix/NRW-Smart-Traffic-Light",
+        link: 'https://github.com/mehdixlabetix/NRW-Smart-Traffic-Light',
     },
 ]
 
 const ProjectsSection = () => {
-    const ref = React.useRef(null);
-    const isInView = useInView(ref,{once:true});
+
+    const projectsList = React.useMemo(()=>
+        projects
+            .map((project) => (
+        <Carte
+            key={project.title}
+            title={project.title}
+            description={project.description}
+            imageSrc={project.getImageSrc()}
+            link={project.link}
+        />
+    )),[projects]);
     return (
         <FullScreenSection p={8} alignItems="flex-start" spacing={8}>
-            <VStack spacing={8}
-                    ref={ref}
-                    style={{
-                        transform: isInView ? "none" : "translateX(-200px)",
-                        opacity: isInView ? 1 : 0,
-                        transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s"}}>
-            <Heading
+            <VStack
+                spacing={8}
 
-                as="h1"
-                id="projects-section"
             >
-                Featured Projects
-            </Heading>
-            <Box
-                id="projects-container"
-                display="grid"
-                gridTemplateColumns="repeat(2,minmax(0,1fr))"
-                gridGap={35}
-            >
-                {projects.map((project) => (
-                    <Carte
-
-                        key={project.title}
-                        title={project.title}
-                        description={project.description}
-                        imageSrc={project.getImageSrc()}
-                        link={project.link}
-                    />
-                ))}
-            </Box>
+                <Heading as="h1" id="projects-section">
+                    Featured Projects
+                </Heading>
+                <Box
+                    id="projects-container"
+                    display="grid"
+                    gridTemplateColumns="repeat(2,minmax(0,1fr))"
+                    gridGap={35}
+                >
+                    {projectsList.map((project) => ( <Box key={project.title} justifySelf="center">{project}</Box> ))
+                    }
+                </Box>
             </VStack>
         </FullScreenSection>
     )
