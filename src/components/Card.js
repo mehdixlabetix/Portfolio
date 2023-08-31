@@ -20,11 +20,11 @@ const Carte = ({ title, description, imageSrc,link}) => {
                     <Text>{description}</Text>
                 </Stack>
             </CardBody>
-            <CardFooter>
+            <CardFooter >
 
-                    <a href={link}>
+                    <a href={link} >
                         <HStack justifyContent="center">
-                        <Text fontSize="lg" as="b">learn more
+                        <Text id="project-footer-text" fontSize="lg" as="b">learn more
                         </Text>
                         <FontAwesomeIcon
                                          icon={faArrowRight} size="1x"/>
