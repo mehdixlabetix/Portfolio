@@ -1,4 +1,3 @@
-
 import { ChakraProvider } from '@chakra-ui/react'
 import Header from './components/Header'
 import LandingSection from './components/LandingSection'
@@ -11,18 +10,19 @@ import CLOUDS from 'vanta/src/vanta.clouds'
 import React, { useEffect } from 'react'
 import Levels from './components/Levels'
 import WhoAmI from './components/WhoAmI'
-import Scroll from './components/Scroll'
-function App() {/*lazy load*/
+import Scroll from "./components/Scroll";
+function App() {
     return (
         <ChakraProvider>
             <AlertProvider>
                 <main
                     style={{
-                        backgroundImage: 'linear-gradient(#f4985a, #f1515e)',
+                        backgroundImage:
+                            'linear-gradient(#f4985a, #f1515e)',
                     }}
                     id="main"
                 >
-                    <Header />
+                    <Header  />
                     <LandingSection />
                     <WhoAmI />
                     <Levels />

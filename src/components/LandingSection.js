@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Heading, Text, VStack } from '@chakra-ui/react'
+import { Image, Heading,Text, VStack } from '@chakra-ui/react'
 import FullScreenSection from './FullScreenSection'
 import useText from '../hooks/useText'
 
@@ -20,11 +20,7 @@ const LandingSection = () => {
                     src={avatarsrc}
                     alt="Mehdi Cherif"
                 />
-                <Heading
-                    marginTop="45px"
-                    style={{ fontFamily: 'Cinzel', whiteSpace: 'pre-wrap' }}
-                    size="xl"
-                >
+                <Heading marginTop="45px" style={{  fontFamily: 'Cinzel' ,whiteSpace: 'pre-wrap' }} size="xl" >
                     <center>
 
                         {useText(greeting + '\n' + bio1 + '\n' + bio2)}
