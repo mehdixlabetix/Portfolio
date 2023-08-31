@@ -10,13 +10,13 @@ const Carte = ({ title, description, imageSrc,link}) => {
     // Feel free to import other UI components from Chakra UI if you wish to.
     return (
         <Card id="project" borderRadius="10px" height="600px">
-            <CardHeader >
-                <Image id="project-image" alt={title} width="600px" height="290" src={imageSrc} borderRadius="md" />
+            <CardHeader id="project-header" >
+                <Image id="project-image" alt={title} width="600px" height="290" src={imageSrc} borderRadius="10px 10px 0px 0px" />
             </CardHeader>
 
-            <CardBody id="project-body">
-                <Stack mt="6" spacing="3">
-                    <Heading size="md">{title}</Heading>
+            <CardBody id="project-body" >
+                <Stack mt="6" spacing="3" >
+                    <Heading id="project-title" size="md">{title}</Heading>
                     <Text>{description}</Text>
                 </Stack>
             </CardBody>

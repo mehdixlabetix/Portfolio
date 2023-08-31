@@ -9,7 +9,7 @@ const WhoAmI = () => {
     return (
         <FullScreenSection justifyContent="center" alignItems="center">
             <VStack id="whoami" ref={ref} style={{
-                transform: isInView ? "none" : "translateX(-200px)",
+                transform: isInView && window.innerWidth>740 ? "none" : "translateX(-200px)",
                 opacity: isInView ? 1 : 0,
                 transition: "all 1.5s ease-in-out 0.85s" }}  >
 

@@ -72,6 +72,14 @@ code {
 #project:hover {
   transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
+#project-header{
+  padding: 0 0 0 0;
+}
+#project-body{
+  padding: 0 20px  0 20px ;
+
+}
+
 #skills-head{
   margin-left: 43%;
 }
@@ -112,6 +120,7 @@ code {
 
   #whoami{
     width: 80%;
+  translate:200px 0;
 
 
   }
@@ -129,6 +138,7 @@ code {
   #whoami-emojis{
     font-size: 1rem;
     padding-bottom: 5px;
+
   }
   #skills{
     translate:-200px 0;
@@ -167,11 +177,9 @@ code {
     width:100%;
 
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1.8rem;
+    grid-gap: 1.4rem;
   }
-  #projects-section-head{
-    margin-left: 10%;
-  }
+
   #projects-section{
     translate: 200px 0px;
 
@@ -185,10 +193,15 @@ code {
 
   }
   #project-image{
-    height: 100px;
+    height: 140px;
+
   }
   #project-body{
     padding: 0% 10% 0% 10%;
+  }
+
+  #project-title{
+    font-size: 0.8rem;
   }
   #contact-me{
     width:100%;
