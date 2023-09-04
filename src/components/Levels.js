@@ -113,12 +113,12 @@ const Levels = () => {
       [skills]
     )
     return (
-        <FullScreenSection p={8} id="skills-gen" spacing={50}>
+        <FullScreenSection p={8} id="skills-gen"  spacing={50}>
             <Card ref = {ref}
                   style={{
                       transform:isInView && window.innerWidth>740 ? "none" : "translateX(200px)",
                       opacity: isInView ? 1 : 0,
-                      transition: "all 1.5s ease-in-out 0.85s"}}
+                      transition: "all 1s ease-in-out 0.85s"}}
                   id="skills" borderRadius="40px">
                 <CardBody>
                     <Heading id="skills-head" as="h1" size="3xl">

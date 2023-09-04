@@ -1,7 +1,7 @@
 import { Heading, HStack, Image, Text, VStack } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Stack } from '@chakra-ui/react'
 import {useInView} from "framer-motion";
 let n=0;
@@ -15,8 +15,7 @@ const Carte = ({ id,title, description, imageSrc,link}) => {
         <Card id="project" borderRadius="10px" height="600px"
               ref={ref}
               style={{
-                  transform: ( window.innerWidth>780) ?((id%2)? ( isInView  ? "none" : "translateX(200px)"): ( isInView ? "none" : "translateX(-200px)")):"none",
-
+                  transform:   window.outerWidth > 780 ? ((id % 2) ? (isInView ? "none" : "translateX(100px)") : (isInView ? "none" : "translateX(-200px)")) : "none",
                   opacity: isInView ? 1 : 0,
                   transition: "all 1s ease-in-out 0.7s"}}>
             <CardHeader id="project-header" >
