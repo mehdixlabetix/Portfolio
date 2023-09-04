@@ -16,7 +16,7 @@ import * as Yup from 'yup'
 import FullScreenSection from './FullScreenSection'
 import useSubmit from '../hooks/useSubmit'
 import { useAlertContext } from '../context/alertContext'
-import { resolveMotionValue } from 'framer-motion'
+import {resolveMotionValue, useInView} from 'framer-motion'
 
 const LandingSection = () => {
     const { isLoading, response, submit } = useSubmit()
@@ -44,9 +44,16 @@ const LandingSection = () => {
                 .min(25, 'Must be at least 25 characters!'),
         }),
     })
+    const ref = React.useRef(null);
+    const isInView = useInView(ref,{once:true});
+
     return (
-        <FullScreenSection py={16} spacing={8}>
-            <VStack id="contact-me" w="1024px" p={32} >
+        <FullScreenSection py={16} spacing={8} id="contact">
+            <VStack id="contact-me" w="1024px" p={32}
+                    ref = {ref}
+                    style={{
+                        opacity: isInView ? 1 : 0,
+                        transition: "all 1.5s ease-in-out 0.85s"}}>
                 <Heading  as="h1" id="contact-me-section">
                     Contact me
                 </Heading>
@@ -54,6 +61,7 @@ const LandingSection = () => {
                     <form onSubmit={formik.handleSubmit}>
                         <VStack spacing={4}>
                             <FormControl
+                                variant="floating"
                                 isInvalid={
                                     formik.errors.firstName &&
                                     formik.touched.firstName
@@ -70,6 +78,7 @@ const LandingSection = () => {
                                 </FormErrorMessage>
                             </FormControl>
                             <FormControl
+                                variant="floating"
                                 isInvalid={
                                     formik.errors.email && formik.touched.email
                                 }
@@ -87,7 +96,7 @@ const LandingSection = () => {
                                     {formik.errors.email}
                                 </FormErrorMessage>
                             </FormControl>
-                            <FormControl>
+                            <FormControl >
                                 <FormLabel htmlFor="type">
                                     Type of enquiry
                                 </FormLabel>
@@ -103,6 +112,7 @@ const LandingSection = () => {
                                 </Select>
                             </FormControl>
                             <FormControl
+                                variant="floating"
                                 isInvalid={
                                     formik.errors.comment &&
                                     formik.touched.comment
@@ -124,8 +134,8 @@ const LandingSection = () => {
                             <Button
                                 isLoading={isLoading}
                                 type="submit"
-                                colorScheme="purple"
-                                width="full"
+                                colorScheme="orange"
+                                width="400px"
                             >
                                 Submit
                             </Button>

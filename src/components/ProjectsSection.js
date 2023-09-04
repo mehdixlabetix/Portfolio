@@ -5,28 +5,28 @@ import Carte from './Card'
 import {useInView} from "framer-motion";
 
 const projects = [
-    {
+    {   id:0,
         title: 'CO2 Emissions in Rwanda\n',
         description:
             'Predicting CO2 emissions in Rwanda using machine learning. The notebook imports a dataset of historical CO2 emissions data and uses a variety of machine learning models to predict future emissions.',
         getImageSrc: () => require('../images/CO2.jpg'),
         link: "https://github.com/mehdixlabetix/CO2EmissionRawanda"
     },
-    {
+    {   id:1,
         title: 'Aerobotix Form',
         description:
             'This is a web form built using React and connected to Firebase, designed for the Aerobotix Robotics Club. The form allows users to submit their information for membership or any other relevant purposes.',
         getImageSrc: () => require('../images/aerobotix.jpg'),
         link: "https://github.com/mehdixlabetix/Aerobotix"
     },
-    {
+    {   id:2,
         title: 'Tunisian Water Level Prediction',
         description:
             'A Time Series model that predicts the level of water in multiple dams around the Tunisian country',
         getImageSrc: () => require('../images/dam2.jpg'),
         link: "https://github.com/mehdixlabetix/Weather-Time-Series"
     },
-    {
+    {   id:3,
         title: 'Smart Traffic Light',
         description:
             'A Traffic Signal Optimization System is a project aimed at tackling the issue of time waste in traffic by implementing an intelligent system that optimizes traffic signal timings.',
@@ -36,8 +36,7 @@ const projects = [
 ]
 
 const ProjectsSection = () => {
-    const ref = React.useRef(null);
-    const isInView = useInView(ref,{once:true});
+
   const projectsList = React.useMemo(()=>
     projects
       .map((project) => (
@@ -47,6 +46,7 @@ const ProjectsSection = () => {
           description={project.description}
           imageSrc={project.getImageSrc()}
           link={project.link}
+          id={project.id}
         />
       )),[projects]);
     return (
@@ -54,11 +54,8 @@ const ProjectsSection = () => {
             <VStack
                     id="projects-section"
                     spacing={8}
-                    ref={ref}
-                    style={{
-                        transform: isInView && window.innerWidth>740 ? "none" : "translateX(-200px)",
-                        opacity: isInView ? 1 : 0,
-                        transition: "all 1.5s ease-in-out 0.7s"}}>
+
+                    >
             <Heading
 
                 as="h1"

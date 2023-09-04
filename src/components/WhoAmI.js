@@ -1,14 +1,17 @@
-import React, {useRef} from 'react'
+import React, {useEffect, useRef} from 'react'
 import {Heading, VStack, Text, HStack} from '@chakra-ui/react'
 import FullScreenSection from './FullScreenSection'
 import {useInView} from "framer-motion";
+import GLOBE from "vanta/src/vanta.globe";
 
 const WhoAmI = () => {
+
    const ref=useRef(null)
     const isInView = useInView(ref,{once:true});
     return (
-        <FullScreenSection justifyContent="center" alignItems="center">
+        <FullScreenSection >
             <VStack id="whoami" ref={ref} style={{
+                borderRadius: "30px",
                 transform: isInView && window.innerWidth>740 ? "none" : "translateX(-200px)",
                 opacity: isInView ? 1 : 0,
                 transition: "all 1.5s ease-in-out 0.85s" }}  >

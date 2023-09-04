@@ -4,7 +4,11 @@ import LandingSection from './components/LandingSection'
 import { AlertProvider } from './context/alertContext'
 import Alert from './components/Alert'
 import Scroll from "./components/Scroll";
-import {lazy,Suspense} from "react";
+import {lazy, Suspense, useEffect} from "react";
+import theme from "./components/Theme";
+import GLOBE from "vanta/src/vanta.globe";
+import WhoAmI from "./components/WhoAmI";
+
 const LazyMe = lazy(() => import('./components/WhoAmI'));
 const LazySkills= lazy(() => import('./components/Levels'));
 const LazyProjects= lazy(() => import('./components/ProjectsSection'));
@@ -12,23 +16,34 @@ const LazyContactMe= lazy(() => import('./components/ContactMeSection'));
 const LazyFooter= lazy(() => import('./components/Footer'));
 
 function App() {
+  useEffect(() => {
+    GLOBE({
+      el: "#vanta",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      zIndex: 0,
+      scale: 0.70,
+      scaleMobile: 1.00,
+      backgroundColor: 0x2b2b2c,
+
+    })
+  }, []);
 
   return (
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <AlertProvider>
           <main
-              style={{
-                backgroundImage:
-                    'linear-gradient(#f4985a, #f1515e)',
-              }}
               id="main"
           >
             <Header  />
             {window.innerWidth>745 && <Scroll />}
+            <div id="vanta">
             <LandingSection />
-            <Suspense fallback={<div>Loading...</div>}>
-              <LazyMe />
-            </Suspense>
+           <WhoAmI/>
+            </div>
             <Suspense fallback={<div> still Loading</div>}>
               <section>
                 <LazySkills />

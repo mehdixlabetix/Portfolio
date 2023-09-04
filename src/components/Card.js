@@ -3,13 +3,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Stack } from '@chakra-ui/react'
+import {useInView} from "framer-motion";
+let n=0;
+const Carte = ({ id,title, description, imageSrc,link}) => {
+    n=n+1;
+    const ref = React.useRef(null);
+    const isInView = useInView(ref,{once:true});
 
-const Carte = ({ title, description, imageSrc,link}) => {
-    // Implement the UI for the Card component according to the instructions.
-    // You should be able to implement the component with the elements imported above.
-    // Feel free to import other UI components from Chakra UI if you wish to.
     return (
-        <Card id="project" borderRadius="10px" height="600px">
+
+        <Card id="project" borderRadius="10px" height="600px"
+              ref={ref}
+              style={{
+                  transform: ( window.innerWidth>780) ?((id%2)? ( isInView  ? "none" : "translateX(200px)"): ( isInView ? "none" : "translateX(-200px)")):"none",
+
+                  opacity: isInView ? 1 : 0,
+                  transition: "all 1.5s ease-in-out 0.7s"}}>
             <CardHeader id="project-header" >
                 <Image id="project-image" alt={title} width="600px" height="290" src={imageSrc} borderRadius="10px 10px 0px 0px" />
             </CardHeader>
@@ -24,7 +33,7 @@ const Carte = ({ title, description, imageSrc,link}) => {
 
                     <a href={link} >
                         <HStack justifyContent="center">
-                        <Text id="project-footer-text" fontSize="lg" as="b">learn more
+                        <Text id="project-footer-text" fontSize="lg" as="b">Learn more
                         </Text>
                         <FontAwesomeIcon
                                          icon={faArrowRight} size="1x"/>

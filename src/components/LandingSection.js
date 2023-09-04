@@ -1,14 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Image, Heading,Text, VStack } from '@chakra-ui/react'
 import FullScreenSection from './FullScreenSection'
 import TextTyper from "./TextTyper";
+import GLOBE from "vanta/src/vanta.globe";
 
 const greeting = 'Hello, I am Mehdi!'
 const bio1 = 'An AI enthusiast and a full-stack developer'
 const bio2 = 'specialised in React and NestJS'
 const avatarsrc = 'images/mehdi.jpg'
-
 const LandingSection = () => {
+
+
+
     return (
         <FullScreenSection justifyContent="center" alignItems="center">
             <VStack spcaing={10}>
@@ -21,7 +24,7 @@ const LandingSection = () => {
                     src={avatarsrc}
                     alt="Mehdi Cherif"
                 />
-                <Heading marginTop="45px" style={{  fontFamily: 'Cinzel' ,whiteSpace: 'pre-wrap' }} size="xl" >
+                <Heading id="landing-text" marginTop="45px" style={{  fontFamily: 'Cinzel' ,whiteSpace: 'pre-wrap' }} size="xl" >
                     <center>
                         <TextTyper text={greeting + '\n' + bio1 + '\n' + bio2} interval={100} Markup="span" />
                     </center>
