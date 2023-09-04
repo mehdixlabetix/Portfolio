@@ -18,7 +18,7 @@ const Carte = ({ id,title, description, imageSrc,link}) => {
                   transform: ( window.innerWidth>780) ?((id%2)? ( isInView  ? "none" : "translateX(200px)"): ( isInView ? "none" : "translateX(-200px)")):"none",
 
                   opacity: isInView ? 1 : 0,
-                  transition: "all 1.5s ease-in-out 0.7s"}}>
+                  transition: "all 1s ease-in-out 0.7s"}}>
             <CardHeader id="project-header" >
                 <Image id="project-image" alt={title} width="600px" height="290" src={imageSrc} borderRadius="10px 10px 0px 0px" />
             </CardHeader>

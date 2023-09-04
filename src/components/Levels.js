@@ -95,7 +95,7 @@ const Levels = () => {
                       height="7"
                       min="0"
                       max="100"
-                      colorScheme="cyan"
+                      colorScheme="blackAlpha"
                       width="490px"
                     >
                         <ProgressLabel

@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import {AbsoluteCenter, Box, ChakraProvider, Divider} from '@chakra-ui/react'
 import Header from './components/Header'
 import LandingSection from './components/LandingSection'
 import { AlertProvider } from './context/alertContext'
@@ -44,6 +44,9 @@ function App() {
             <LandingSection />
            <WhoAmI/>
             </div>
+              <Box  height="30px" >
+              <Divider orientation="horizontal"/>
+              </Box>
             <Suspense fallback={<div> still Loading</div>}>
               <section>
                 <LazySkills />

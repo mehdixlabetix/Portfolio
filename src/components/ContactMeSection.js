@@ -134,7 +134,7 @@ const LandingSection = () => {
                             <Button
                                 isLoading={isLoading}
                                 type="submit"
-                                colorScheme="orange"
+                                colorScheme="pink"
                                 width="400px"
                             >
                                 Submit
