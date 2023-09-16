@@ -25,7 +25,7 @@ function App() {
         setTimeout(() => {
             setLoading(false);
             setDone(true);
-        }, 4000);
+        }, 2500);
     }, []);
   useEffect(() => {
    setTimeout(()=> {GLOBE({
@@ -40,14 +40,14 @@ function App() {
       scaleMobile: 1.00,
       backgroundColor: 0x2b2b2c,
 
-    })},4050)
+    })},2550)
   }, []);
 const ref=useRef()
   return (
       <AnimatePresence mode="wait">
           {loading ? (
               <AnimatePresence mode="wait"><>
-               <center>   <Lottie id="bear" animationData={bear} loop={true}  style={{width:"50%",height:"35%"}}/></center>
+               <center>   <Lottie id="bear" animationData={bear} loop={true}  style={{width:"45%",height:"15%"}}/></center>
           {/*<PacmanLoader
               id="preloader"
               color={"#a74482"}

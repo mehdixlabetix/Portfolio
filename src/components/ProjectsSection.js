@@ -1,8 +1,9 @@
 import React from 'react'
 import FullScreenSection from './FullScreenSection'
-import {Box, Heading, VStack} from '@chakra-ui/react'
+import {Box, Heading, HStack, Stepper, useSteps, VStack} from '@chakra-ui/react'
 import Carte from './Card'
 import {useInView} from "framer-motion";
+import Example from "./Stepper";
 
 const projects = [
     {   id:0,
@@ -16,13 +17,13 @@ const projects = [
         title: 'Aerobotix Form',
         description:
             'This is a web form built using React and connected to Firebase, designed for the Aerobotix Robotics Club. The form allows users to submit their information for membership or any other relevant purposes.',
-        getImageSrc: () => require('../images/aerobotix.jpg'),
+        getImageSrc: () => require('../images/img.png'),
         link: "https://github.com/mehdixlabetix/Aerobotix"
     },
     {   id:2,
         title: 'Tunisian Water Level Prediction',
         description:
-            'A Time Series model that predicts the level of water in multiple dams around the Tunisian country',
+            'A Time Series model that predicts the level of water in multiple dams around the Tunisian country using old data. The model is built using XGBoost.',
         getImageSrc: () => require('../images/dam2.jpg'),
         link: "https://github.com/mehdixlabetix/Weather-Time-Series"
     },
@@ -38,7 +39,7 @@ const projects = [
 const ProjectsSection = () => {
 
   const projectsList = React.useMemo(()=>
-    projects
+      projects
       .map((project) => (
         <Carte
           key={project.title}
@@ -66,10 +67,15 @@ const ProjectsSection = () => {
             <Box
                 id="projects-container"
                 display="grid"
-                gridTemplateColumns="repeat(2,minmax(0,1fr))"
-                gridGap={35}
+                gridTemplateColumns="repeat(1,minmax(0,0.8fr))"
+                gridGap={30}
             >
+                <HStack gap={128}>
+                <Example/>
+                    <VStack gap={20}>
               {projectsList.map((project) => (project))}
+                    </VStack>
+                </HStack>
             </Box>
             </VStack>
         </FullScreenSection>

@@ -1,4 +1,4 @@
-import { Heading, HStack, Image, Text, VStack } from '@chakra-ui/react'
+import {Center, Heading, HStack, Image, Text, VStack} from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import React, {useEffect, useState} from 'react'
@@ -12,23 +12,32 @@ const Carte = ({ id,title, description, imageSrc,link}) => {
 
     return (
 
-        <Card id="project" borderRadius="10px" height="600px"
+        <Card id="project" borderRadius="10px" height="220px"
               ref={ref}
+              direction={{ base: 'column', sm: 'row' }}
+              overflow='hidden'
               style={{
-                  transform:   window.outerWidth > 780 ? ((id % 2) ? (isInView ? "none" : "translateX(100px)") : (isInView ? "none" : "translateX(-200px)")) : "none",
+                  transform:   window.outerWidth > 780 ?  (isInView ? "none" : "translateX(100px)")  : "none",
                   opacity: isInView ? 1 : 0,
                   transition: "all 1s ease-in-out 0.7s"}}>
-            <CardHeader id="project-header" >
-                <Image id="project-image" alt={title} width="600px" height="290" src={imageSrc} borderRadius="10px 10px 0px 0px" />
-            </CardHeader>
+
+                <Image id="project-image" alt={title} width="350px"
+                       objectFit='fill'
+                       maxW={{ base: '100%', sm: '400px' }}
+                       src={imageSrc} borderRadius="10px 10px 0px 0px" />
+
 
             <CardBody id="project-body" >
-                <Stack mt="6" spacing="3" >
+                <Stack mt="6" spacing="3">
+                    <Center>
                     <Heading id="project-title" size="md">{title}</Heading>
-                    <Text>{description}</Text>
+                    </Center>
+                    <Center>
+                        <Text>{description}</Text>
+                    </Center>
                 </Stack>
             </CardBody>
-            <CardFooter >
+            <CardFooter id="project-footer" >
 
                     <a href={link} >
                         <HStack justifyContent="center">
