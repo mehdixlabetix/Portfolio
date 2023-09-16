@@ -11,7 +11,7 @@ import WhoAmI from "./components/WhoAmI";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { motion, AnimatePresence } from "framer-motion"
 import Lottie from "lottie-react";
-import bear from "./anim/bear.json"
+import code from "./anim/code.json"
 
 const LazySkills= lazy(() => import('./components/Levels'));
 const LazyProjects= lazy(() => import('./components/ProjectsSection'));
@@ -25,7 +25,7 @@ function App() {
         setTimeout(() => {
             setLoading(false);
             setDone(true);
-        }, 2500);
+        }, 2700);
     }, []);
   useEffect(() => {
    setTimeout(()=> {GLOBE({
@@ -40,20 +40,15 @@ function App() {
       scaleMobile: 1.00,
       backgroundColor: 0x2b2b2c,
 
-    })},2550)
+    })},2750)
   }, []);
 const ref=useRef()
   return (
       <AnimatePresence mode="wait">
           {loading ? (
               <AnimatePresence mode="wait"><>
-               <center>   <Lottie id="bear" animationData={bear} loop={true}  style={{width:"45%",height:"15%"}}/></center>
-          {/*<PacmanLoader
-              id="preloader"
-              color={"#a74482"}
-                loading={loading}
-                size={150} />
-*/}
+               <center>   <Lottie id="bear" animationData={code} loop={true}  style={{width:"45%",height:"15%"}}/></center>
+
               <motion.div
               className="slide-out"
               initial={{scaleY:1}}
@@ -85,7 +80,8 @@ const ref=useRef()
             </Suspense>
 
             <Suspense fallback={<div>hummm</div>}>
-              <LazyContactMe />
+
+                <LazyContactMe />
             </Suspense>
             <Suspense fallback={<div>omg</div>}>
               <LazyFooter />

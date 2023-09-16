@@ -6,7 +6,7 @@ import {
     FormControl,
     FormErrorMessage,
     FormLabel,
-    Heading,
+    Heading, HStack,
     Input,
     Select,
     Textarea,
@@ -17,6 +17,8 @@ import FullScreenSection from './FullScreenSection'
 import useSubmit from '../hooks/useSubmit'
 import { useAlertContext } from '../context/alertContext'
 import {resolveMotionValue, useInView} from 'framer-motion'
+import Lottie from "lottie-react";
+import contact from "../anim/contact.json"
 
 const LandingSection = () => {
     const { isLoading, response, submit } = useSubmit()
@@ -48,16 +50,21 @@ const LandingSection = () => {
     const isInView = useInView(ref,{once:true});
 
     return (
-        <FullScreenSection py={16} spacing={8} id="contact">
+        <FullScreenSection  spacing={8} id="contact">
             <VStack id="contact-me" w="1024px" p={32}
                     ref = {ref}
                     style={{
                         opacity: isInView ? 1 : 0,
                         transition: "all 1.5s ease-in-out 0.85s"}}>
-                <Heading  as="h1" id="contact-me-section">
-                    Contact me
-                </Heading>
-                <Box id="contact-me-form" p={6} rounded="md" w="100%">
+                <HStack width="50%" >
+
+
+                    <Heading width="100%" as="h1" id="contact-me-section">
+                        Contact me
+                    </Heading>
+                    <Lottie id="bear" animationData={contact} loop={true}
+                            style={{width: "80%"}}/>
+                </HStack>  <Box id="contact-me-form" p={6} rounded="md" w="100%">
                     <form onSubmit={formik.handleSubmit}>
                         <VStack spacing={4}>
                             <FormControl

@@ -82,7 +82,7 @@ const Levels = () => {
                           src={skill.getImageSrc()}
                           alt={skill.title}
                         />
-                        <Text as="b" id="skills-title" fontSize="3xl">
+                        <Text fontFamily="Bebas Neue"  id="skills-title" fontSize="4xl">
                             {skill.title}
                         </Text>
                     </HStack>
@@ -95,7 +95,7 @@ const Levels = () => {
                       height="7"
                       min="0"
                       max="100"
-                      colorScheme="blackAlpha"
+                      colorScheme="yellow"
                       width="490px"
                     >
                         <ProgressLabel
@@ -121,7 +121,7 @@ const Levels = () => {
                       transition: "all 1s ease-in-out 0.85s"}}
                   id="skills" borderRadius="40px">
                 <CardBody>
-                    <Heading id="skills-head" as="h1" size="3xl">
+                    <Heading fontFamily="Libre Baskerville" id="skills-head" as="h1" size="3xl">
                         Skills
                     </Heading>
 

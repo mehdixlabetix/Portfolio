@@ -24,7 +24,7 @@ const Carte = ({ id,title, description, imageSrc,link}) => {
                 <Image id="project-image" alt={title} width="350px"
                        objectFit='fill'
                        maxW={{ base: '100%', sm: '400px' }}
-                       src={imageSrc} borderRadius="10px 10px 0px 0px" />
+                       src={imageSrc} borderRadius="10px 0px 0px 10px" />
 
 
             <CardBody id="project-body" >
