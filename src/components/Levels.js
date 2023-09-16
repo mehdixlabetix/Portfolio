@@ -17,7 +17,7 @@ import {useInView} from "framer-motion";
 const skills = [
     {
         title: 'React ',
-        progress: 80,
+        progress: 85,
         getImageSrc: () => require('../images/React.png'),
     },
     {
