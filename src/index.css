@@ -8,6 +8,10 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
     --card-color:rgba(167, 68, 130,1)/*rgba(255, 236, 209, 0.7)*/;
+
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 html {
