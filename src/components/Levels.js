@@ -21,6 +21,16 @@ const skills = [
         getImageSrc: () => require('../images/React.png'),
     },
     {
+        title: 'Django ',
+        progress: 40,
+        getImageSrc: () => require('../images/django.png'),
+    },
+    {
+        title: 'Angular ',
+        progress: 30,
+        getImageSrc: () => require('../images/angular.png'),
+    },
+    {
         title: 'NestJS ',
         progress: 60,
         getImageSrc: () => require('../images/nestjs.png'),

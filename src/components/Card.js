@@ -3,13 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import React, {useEffect, useState} from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Stack } from '@chakra-ui/react'
-import {useInView} from "framer-motion";
-let n=0;
+import {useInView,motion} from "framer-motion";
 const Carte = ({ id,title, description, imageSrc,link}) => {
-    n=n+1;
     const ref = React.useRef(null);
     const isInView = useInView(ref,{once:true});
-
     return (
 
         <Card id="project" borderRadius="10px" height="220px"
@@ -17,11 +14,11 @@ const Carte = ({ id,title, description, imageSrc,link}) => {
               direction={{ base: 'column', sm: 'row' }}
               overflow='hidden'
               style={{
-                  transform:   window.outerWidth > 780 ?  (isInView ? "none" : "translateX(100px)")  : "none",
+                  transform:   window.outerWidth > 780 ?  (isInView ?"none" : "translateX(100px)")  : "none",
                   opacity: isInView ? 1 : 0,
-                  transition: "all 1s ease-in-out 0.7s"}}>
-
-                <Image id="project-image" alt={title} width="350px"
+                  transition: "all 1s ease-in-out 0.7s"}}
+>
+        <Image id="project-image" alt={title} width="350px"
                        objectFit='fill'
                        maxW={{ base: '100%', sm: '400px' }}
                        src={imageSrc} borderRadius="10px 0px 0px 10px" />
