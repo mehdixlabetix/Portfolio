@@ -60,7 +60,7 @@ padding: 10px 0 10px 0;
     transform: translatey(0px);
   }
   50% {
-    transform: translatey(-3px);
+    transform: translatey(-2px);
   }
   100% {
     transform: translatey(0px);
@@ -138,6 +138,7 @@ padding: 10px 0 10px 0;
 
     padding: 0 50px 0 50px;
     }
+
 #project{
   width: 110%;
 
@@ -149,9 +150,7 @@ padding: 10px 0 10px 0;
 ;/*linear-gradient(#DFF2D8 ,#C6DEA6);
    box-shadow: rgb(128, 128, 128) 1px 1px 3px 1px;*/
 }
-#project:hover {
-  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
+
 #project-header{
   padding: 0 0 0 0;
 }
