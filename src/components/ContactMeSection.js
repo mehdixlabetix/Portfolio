@@ -20,7 +20,6 @@ import { useAlertContext } from '../context/alertContext'
 import { resolveMotionValue, useInView } from 'framer-motion'
 import Lottie from 'lottie-react'
 import contact from '../anim/contact.json'
-import Spline from "@splinetool/react-spline";
 
 
 
