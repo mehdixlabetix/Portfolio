@@ -1,34 +1,25 @@
 import React, { useEffect, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faEnvelope,
-} from '@fortawesome/free-solid-svg-icons'
-import {
-    faGithub,
-    faLinkedin,
-} from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Box, HStack } from '@chakra-ui/react'
-import Scroll from "./Scroll";
+import Scroll from './Scroll'
 
 const socials = [
-    {   name:"Mail",
+    {
+        name: 'Mail',
         icon: faEnvelope,
         url: 'mailto:mehdi.cherif@insat.ucar.tn',
     },
-    {   name:"Github",
-        icon: faGithub,
-        url: 'https://github.com/mehdixlabetix',
-    },
-    {   name:"Linkedin",
+    { name: 'Github', icon: faGithub, url: 'https://github.com/mehdixlabetix' },
+    {
+        name: 'Linkedin',
         icon: faLinkedin,
         url: 'https://www.linkedin.com/in/mehdi-cherif-31b1ba204/',
     },
 ]
 
 const Header = () => {
-
-
-
     let translation = useRef(null)
     let prevScrollY = 0
     const handleScroll = () => {
@@ -56,7 +47,7 @@ const Header = () => {
 
     return (
         <Box
-            id ="header"
+            id="header"
             position="fixed"
             top={0}
             left={0}
@@ -70,40 +61,40 @@ const Header = () => {
         >
             <Box color="white" maxWidth="1280px" margin="0 auto">
                 <HStack
-
                     px={16}
                     py={4}
                     justifyContent="space-between"
                     alignItems="center"
                 >
-                    <nav  id="header-socials">
+                    <nav id="header-socials">
                         <HStack spacing={8}>
-                            {
-                                socials.map((social) => {
-                                    return (
-                                        <a aria-label={"Reachout using"+ social.name} key={social.name} href={social.url}>
-                                            <FontAwesomeIcon
-                                                icon={social.icon}
-                                                size="2x"
-                                            />
-                                        </a>
-                                    )
-                                })
-                            }
+                            {socials.map((social) => {
+                                return (
+                                    <a
+                                        aria-label={
+                                            'Reachout using' + social.name
+                                        }
+                                        key={social.name}
+                                        href={social.url}
+                                    >
+                                        <FontAwesomeIcon
+                                            icon={social.icon}
+                                            size="2x"
+                                        />
+                                    </a>
+                                )
+                            })}
                         </HStack>
                     </nav>
                     <nav id="header-links">
                         <HStack spacing={8}>
-
                             <a href="#contact-me-section">Contact me</a>
                             <a href="#projects-section">Projects</a>
                         </HStack>
                     </nav>
                 </HStack>
             </Box>
-
         </Box>
-
     )
 }
 export default Header

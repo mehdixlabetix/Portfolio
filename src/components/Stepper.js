@@ -1,22 +1,24 @@
 import {
     Box,
-    Step, StepDescription,
+    Step,
+    StepDescription,
     StepIcon,
     StepIndicator,
     StepNumber,
-    Stepper, StepSeparator,
+    Stepper,
+    StepSeparator,
     StepStatus,
     StepTitle,
-    useSteps
-} from "@chakra-ui/react";
-import React from "react";
-import {useInView} from "framer-motion";
+    useSteps,
+} from '@chakra-ui/react'
+import React from 'react'
+import { useInView } from 'framer-motion'
 
 const steps = [
-    { title: 'First'},
+    { title: 'First' },
     { title: 'Second' },
     { title: 'Third' },
-    { title: 'Fourth'},
+    { title: 'Fourth' },
 ]
 
 function Example() {
@@ -26,22 +28,22 @@ function Example() {
     })
 
     return (
-        <Stepper index={activeStep} marginLeft='-100px' orientation='vertical' height='950px' gap='0'>
+        <Stepper
+            index={activeStep}
+            marginLeft="-100px"
+            orientation="vertical"
+            height="950px"
+            gap="0"
+        >
             {steps.map((step, index) => (
-                <Step key={index}
-
-                >
-                    <StepIndicator
-                        id="step"
-                    >
+                <Step key={index}>
+                    <StepIndicator id="step">
                         <StepStatus
                             complete={<StepIcon />}
                             incomplete={<StepNumber />}
                             active={<StepNumber />}
                         />
                     </StepIndicator>
-
-
 
                     <StepSeparator />
                 </Step>
@@ -50,4 +52,4 @@ function Example() {
     )
 }
 
-export default Example;
+export default Example

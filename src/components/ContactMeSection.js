@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {lazy, useEffect} from 'react'
 import { useFormik } from 'formik'
 import {
     Box,
@@ -6,7 +6,8 @@ import {
     FormControl,
     FormErrorMessage,
     FormLabel,
-    Heading, HStack,
+    Heading,
+    HStack,
     Input,
     Select,
     Textarea,
@@ -16,9 +17,14 @@ import * as Yup from 'yup'
 import FullScreenSection from './FullScreenSection'
 import useSubmit from '../hooks/useSubmit'
 import { useAlertContext } from '../context/alertContext'
-import {resolveMotionValue, useInView} from 'framer-motion'
-import Lottie from "lottie-react";
-import contact from "../anim/contact.json"
+import { resolveMotionValue, useInView } from 'framer-motion'
+import Lottie from 'lottie-react'
+import contact from '../anim/contact.json'
+import Spline from "@splinetool/react-spline";
+
+
+
+
 
 const LandingSection = () => {
     const { isLoading, response, submit } = useSubmit()
@@ -46,25 +52,33 @@ const LandingSection = () => {
                 .min(25, 'Must be at least 25 characters!'),
         }),
     })
-    const ref = React.useRef(null);
-    const isInView = useInView(ref,{once:true});
+    const ref = React.useRef(null)
+    const isInView = useInView(ref, { once: true })
 
     return (
-        <FullScreenSection  spacing={8} id="contact">
-            <VStack id="contact-me" w="1024px" p={32}
-                    ref = {ref}
-                    style={{
-                        opacity: isInView ? 1 : 0,
-                        transition: "all 1.5s ease-in-out 0.85s"}}>
-                <HStack width="50%" >
-
-
+        <FullScreenSection spacing={8} id="contact">
+            <VStack
+                id="contact-me"
+                w="1024px"
+                p={32}
+                ref={ref}
+                style={{
+                    opacity: isInView ? 1 : 0,
+                    transition: 'all 1.5s ease-in-out 0.85s',
+                }}
+            >
+                <HStack width="50%">
                     <Heading width="100%" as="h1" id="contact-me-section">
                         Contact me
                     </Heading>
-                    <Lottie id="bear" animationData={contact} loop={true}
-                            style={{width: "80%"}}/>
-                </HStack>  <Box id="contact-me-form" p={6} rounded="md" w="100%">
+                    <Lottie
+                        id="bear"
+                        animationData={contact}
+                        loop={true}
+                        style={{ width: '80%' }}
+                    />
+                </HStack>{' '}
+                <Box id="contact-me-form" p={6} rounded="md" w="100%">
                     <form onSubmit={formik.handleSubmit}>
                         <VStack spacing={4}>
                             <FormControl
@@ -103,7 +117,7 @@ const LandingSection = () => {
                                     {formik.errors.email}
                                 </FormErrorMessage>
                             </FormControl>
-                            <FormControl >
+                            <FormControl>
                                 <FormLabel htmlFor="type">
                                     Type of enquiry
                                 </FormLabel>
