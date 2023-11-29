@@ -237,9 +237,15 @@ code {
         font-size: 1rem;
         padding-bottom: 5px;
     }
+    #logoHstack {
+        width: 100%;
+        justify-content: center;
+        gap: 50px;
+        margin-left: -20px;
+    }
     #skills {
         translate: -200px 0;
-        width: 100%;
+        width: 90%;
         height: 70%;
         padding-right: 4px;
         border-radius: 22px;

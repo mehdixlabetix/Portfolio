@@ -82,9 +82,10 @@ const Levels = () => {
                             alignItems="left"
                             spacing={1}
                             key={skill.title}
-                            paddingLeft="18%"
+                            paddingLeft="20%"
+                            id="logoVstack"
                         >
-                            <HStack spacing={20} alignItems="self-end">
+                            <HStack id ="logoHstack" spacing={20} alignItems="self-end">
                                 <Image
                                     id="logos"
                                     objectPosition="center"
