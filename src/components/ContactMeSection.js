@@ -55,6 +55,7 @@ const LandingSection = () => {
 
     return (
         <FullScreenSection spacing={8} id="contact">
+
             <VStack
                 id="contact-me"
                 w="1024px"
@@ -63,10 +64,18 @@ const LandingSection = () => {
                 style={{
                     opacity: isInView ? 1 : 0,
                     transition: 'all 1.5s ease-in-out 0.85s',
+                    zIndex:2,
                 }}
             >
-                <HStack width="50%">
-                    <Heading width="100%" as="h1" id="contact-me-section">
+                <HStack width="50%"
+                style={{
+                    backgroundColor: 'rgba(245, 40, 145, 0.8)',
+                    borderRadius: '40px',
+                    height: '70px',
+                    marginBottom: '30px',
+                }}>
+                    <Heading width="100%" as="h1" id="contact-me-section" color={'black'}
+                    >
                         Contact me
                     </Heading>
                     <Lottie
