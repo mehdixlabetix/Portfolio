@@ -1,5 +1,5 @@
-import { useScroll, motion, useSpring } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import {motion, useScroll, useSpring} from 'framer-motion'
+import {useEffect, useRef} from 'react'
 
 const Scroll = () => {
     let translation = useRef(null)
@@ -19,7 +19,7 @@ const Scroll = () => {
         }
     }, [translation])
 
-    const { scrollYProgress } = useScroll()
+    const {scrollYProgress} = useScroll()
     const scaleX = useSpring(scrollYProgress, {
         stiffness: 400,
         damping: 20,

@@ -1,5 +1,5 @@
-import { initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
+import {initializeApp} from 'firebase/app'
+import {getFirestore} from 'firebase/firestore'
 // https://firebase.google.com/docs/web/setup#available-libraries
 const apiKey = 'AIzaSyCp_Jy1DNAJudUXH1f1zCh7qvCAjzHhjm8'
 // Your web app's Firebase configuration

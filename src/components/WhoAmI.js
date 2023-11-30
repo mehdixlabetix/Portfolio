@@ -1,12 +1,11 @@
-import React, { useEffect, useRef } from 'react'
-import { Heading, VStack, Text, HStack } from '@chakra-ui/react'
+import React, {useRef} from 'react'
+import {Heading, HStack, Text, VStack} from '@chakra-ui/react'
 import FullScreenSection from './FullScreenSection'
-import { useInView } from 'framer-motion'
-import GLOBE from 'vanta/src/vanta.globe'
+import {useInView} from 'framer-motion'
 
 const WhoAmI = () => {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
+    const isInView = useInView(ref, {once: true})
     return (
         <FullScreenSection>
             <VStack
@@ -26,13 +25,13 @@ const WhoAmI = () => {
                     size="3xl"
                     id="whoami-heading"
                     paddingBottom="50px"
-                    style={{ whiteSpace: 'pre' }}
+                    style={{whiteSpace: 'pre'}}
                 >
-                    <center style={{color:'rgba(250, 47, 142, 1)'}}> Who am I really ?</center>
+                    <center style={{color: 'rgba(250, 47, 142, 1)'}}> Who am I really ?</center>
                 </Heading>
                 <Text
                     id="whoami-text"
-                    style={{ fontFamily: 'Hind Siliguri' }}
+                    style={{fontFamily: 'Hind Siliguri'}}
                     fontSize="2xl"
                     paddingBottom="18px"
                     paddingLeft="5px"

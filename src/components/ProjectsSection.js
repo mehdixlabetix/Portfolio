@@ -1,15 +1,7 @@
 import React from 'react'
 import FullScreenSection from './FullScreenSection'
-import {
-    Box,
-    Heading,
-    HStack,
-    Stepper,
-    useSteps,
-    VStack,
-} from '@chakra-ui/react'
+import {Box, Heading, HStack, VStack,} from '@chakra-ui/react'
 import Carte from './Card'
-import { useInView } from 'framer-motion'
 import Example from './Stepper'
 
 const projects = [
@@ -69,13 +61,13 @@ const ProjectsSection = () => {
                     Featured Projects
                 </Heading>
                 <Box p={2}
-                    id="projects-container"
-                    display="grid"
-                    gridTemplateColumns="repeat(1,minmax(0,0.8fr))"
-                    gridGap={30}
+                     id="projects-container"
+                     display="grid"
+                     gridTemplateColumns="repeat(1,minmax(0,0.8fr))"
+                     gridGap={30}
                 >
                     <HStack gap={128}>
-                        <Example />
+                        <Example/>
                         <VStack gap={20}>
                             {projectsList.map((project) => project)}
                         </VStack>

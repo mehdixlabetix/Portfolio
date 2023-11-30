@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import {useEffect, useState} from 'react'
 
 const TextTyper = ({
-    // now the phrase, interval and HTML element desired will come via props and we have some default values here
-    text = '',
-    interval = 100,
-    Markup = 'span',
-}) => {
+                       // now the phrase, interval and HTML element desired will come via props and we have some default values here
+                       text = '',
+                       interval = 100,
+                       Markup = 'span',
+                   }) => {
     const [typedText, setTypedText] = useState('')
 
     const typingRender = (text, updater, interval) => {

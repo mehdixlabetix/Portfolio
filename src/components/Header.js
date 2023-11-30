@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { Box, HStack } from '@chakra-ui/react'
-import Scroll from './Scroll'
+import React, {useEffect, useRef} from 'react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import {Box, HStack} from '@chakra-ui/react'
 
 const socials = [
     {
@@ -11,7 +10,7 @@ const socials = [
         icon: faEnvelope,
         url: 'mailto:mehdi.cherif@insat.ucar.tn',
     },
-    { name: 'Github', icon: faGithub, url: 'https://github.com/mehdixlabetix' },
+    {name: 'Github', icon: faGithub, url: 'https://github.com/mehdixlabetix'},
     {
         name: 'Linkedin',
         icon: faLinkedin,

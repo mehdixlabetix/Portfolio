@@ -1,18 +1,7 @@
 import React from 'react'
 import FullScreenSection from './FullScreenSection'
-import {
-    Box,
-    Progress,
-    Heading,
-    Text,
-    HStack,
-    Image,
-    VStack,
-    ProgressLabel,
-    Card,
-    CardBody,
-} from '@chakra-ui/react'
-import { useInView } from 'framer-motion'
+import {Box, Card, CardBody, Heading, HStack, Image, Text, VStack,} from '@chakra-ui/react'
+import {useInView} from 'framer-motion'
 
 const skills = [
     {
@@ -69,7 +58,7 @@ const skills = [
 
 const Levels = () => {
     const ref = React.useRef(null)
-    const isInView = useInView(ref, { once: true })
+    const isInView = useInView(ref, {once: true})
     const skillsList = React.useMemo(
         () =>
             skills
@@ -85,7 +74,7 @@ const Levels = () => {
                             paddingLeft="20%"
                             id="logoVstack"
                         >
-                            <HStack id ="logoHstack" spacing={10} alignItems="self-end">
+                            <HStack id="logoHstack" spacing={10} alignItems="self-end">
                                 <Image
                                     id="logos"
                                     objectPosition="center"

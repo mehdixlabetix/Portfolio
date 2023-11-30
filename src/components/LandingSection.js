@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
-import { Image, Heading, Text, VStack } from '@chakra-ui/react'
+import React from 'react'
+import {Heading, Image, Text, VStack} from '@chakra-ui/react'
 import FullScreenSection from './FullScreenSection'
 import TextTyper from './TextTyper'
-import GLOBE from 'vanta/src/vanta.globe'
 
 const bio1 = 'An AI enthusiast and a full-stack developer'
 const bio2 = 'specialised in React and NestJS'
@@ -23,13 +22,14 @@ const LandingSection = () => {
                 <Heading
                     id="landing-text"
                     marginTop="45px"
-                    style={{ fontFamily: 'Laila', whiteSpace: 'pre-wrap' }}
+                    style={{fontFamily: 'Laila', whiteSpace: 'pre-wrap'}}
                     size="xl"
                 >
                     <center>
-                        <h2>Hello, I am <span style={{color:'rgba(250, 47, 142, 1)',fontWeight:'bold'}}>Mehdi !</span> </h2>
+                        <h2>Hello, I am <span
+                            style={{color: 'rgba(250, 47, 142, 1)', fontWeight: 'bold'}}>Mehdi !</span></h2>
                         <TextTyper
-                            text={  bio1 + '\n' + bio2}
+                            text={bio1 + '\n' + bio2}
                             interval={100}
                             Markup="span"
                         />
