@@ -64,11 +64,11 @@ const ProjectsSection = () => {
     )
     return (
         <FullScreenSection p={8} alignItems="flex-start" spacing={8}>
-            <VStack id="projects-section" spacing={8}>
+            <VStack id="projects-section" spacing={20}>
                 <Heading as="h1" id="projects-section-head">
                     Featured Projects
                 </Heading>
-                <Box
+                <Box p={2}
                     id="projects-container"
                     display="grid"
                     gridTemplateColumns="repeat(1,minmax(0,0.8fr))"

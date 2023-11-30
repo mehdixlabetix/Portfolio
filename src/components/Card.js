@@ -11,7 +11,7 @@ const Carte = ({ id, title, description, imageSrc, link }) => {
         <Card
             id="project"
             borderRadius="10px"
-            height="220px"
+            height="170px"
             ref={ref}
             direction={{ base: 'column', sm: 'row' }}
             overflow="hidden"
@@ -29,7 +29,7 @@ const Carte = ({ id, title, description, imageSrc, link }) => {
             <Image
                 id="project-image"
                 alt={title}
-                width="350px"
+                width="340px"
                 objectFit="fill"
                 maxW={{ base: '100%', sm: '400px' }}
                 src={imageSrc}
@@ -44,7 +44,7 @@ const Carte = ({ id, title, description, imageSrc, link }) => {
                         </Heading>
                     </Center>
                     <Center>
-                        <Text>{description}</Text>
+                        <Text fontSize={14}>{description}</Text>
                     </Center>
                 </Stack>
             </CardBody>

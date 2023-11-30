@@ -85,12 +85,12 @@ const Levels = () => {
                             paddingLeft="20%"
                             id="logoVstack"
                         >
-                            <HStack id ="logoHstack" spacing={20} alignItems="self-end">
+                            <HStack id ="logoHstack" spacing={10} alignItems="self-end">
                                 <Image
                                     id="logos"
                                     objectPosition="center"
                                     objectFit="contain"
-                                    boxSize="80px"
+                                    boxSize="50px"
                                     src={skill.getImageSrc()}
                                     alt={skill.title}
                                 />
@@ -98,7 +98,7 @@ const Levels = () => {
                                     align="center"
                                     fontFamily="Bebas Neue"
                                     id="skills-title"
-                                    fontSize="4xl"
+                                    fontSize="2xl"
                                 >
                                     {skill.title}
                                 </Text>
@@ -109,7 +109,7 @@ const Levels = () => {
         [skills]
     )
     return (
-        <FullScreenSection p={8} id="skills-gen" spacing={50}>
+        <FullScreenSection id="skills-gen">
             <Card
                 ref={ref}
                 style={{
@@ -128,7 +128,7 @@ const Levels = () => {
                         fontFamily="Libre Baskerville"
                         id="skills-head"
                         as="h1"
-                        size="3xl"
+                        size="xl"
                         paddingTop="20px"
                     >
                         Skills
@@ -137,8 +137,8 @@ const Levels = () => {
                     <Box
                         id="skills-container"
                         display="grid"
-                        gridTemplateColumns="repeat(2,500px)"
-                        gridGap={6}
+                        gridTemplateColumns="repeat(2,450px)"
+                        gridGap={5}
                         alignItems="flex-end"
                         paddingBottom="20px"
                         paddingTop="40px"

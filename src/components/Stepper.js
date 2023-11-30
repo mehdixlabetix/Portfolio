@@ -32,7 +32,7 @@ function Example() {
             index={activeStep}
             marginLeft="-100px"
             orientation="vertical"
-            height="950px"
+            height="780px"
             gap="0"
         >
             {steps.map((step, index) => (
