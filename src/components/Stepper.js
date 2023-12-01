@@ -16,6 +16,7 @@ const steps = [
     {title: 'Second'},
     {title: 'Third'},
     {title: 'Fourth'},
+    {title: 'Fifth'},
 ]
 
 function Example() {
@@ -31,7 +32,7 @@ function Example() {
             index={activeStep}
             marginLeft="-100px"
             orientation="vertical"
-            height="780px"
+            height="1000px"
             gap="0"
             ref={ref}
             style={{

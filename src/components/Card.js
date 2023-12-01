@@ -1,14 +1,45 @@
 import {Card, CardBody, CardFooter, Center, Heading, HStack, Image, Stack, Text} from '@chakra-ui/react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
-import React from 'react'
+import React, {useState} from 'react'
 import {useInView} from 'framer-motion'
 
 const Carte = ({id, title, description, imageSrc, link}) => {
     const ref = React.useRef(null)
     const isInView = useInView(ref, {once: true})
-    return (
+    const [mouseCoordinates, setMouseCoordinates] = useState({x: 0, y: 0});
+    const [cardCenter, setCardCenter] = useState({x: 0, y: 0}); // Initialize cardCenter
+
+    const calculateRotationAngle = () => {
+
+        const deltaX = mouseCoordinates.x - cardCenter.x
+        const deltaY = mouseCoordinates.y - cardCenter.y
+        /*const angle = Math.atan2(deltaY/100, deltaX/100)*/
+        console.log("x:" + deltaX / 600 + " y:" + deltaY / 60)
+        return ({x: -deltaX / 60, y: deltaY / 5})
+    }
+    const mouse = (event) => {
+        setMouseCoordinates({
+            x: event.clientX,
+            y: event.clientY
+        });
+        if (ref.current) {
+            const cardPosition = ref.current.getBoundingClientRect()
+            const newCardCenter = {
+                x: cardPosition.left + cardPosition.width / 2,
+                y: cardPosition.top + cardPosition.height / 2
+            }
+            setCardCenter(newCardCenter);
+        }
+
+    }
+    return (<div
+        style={{
+            transition: 'all 0.2s cubic-bezier(0.03, 0.9, 0.5, 0.8) 0s',
+            transform: `perspective(1000px) rotateX(${calculateRotationAngle().y}deg) rotateY(${calculateRotationAngle().x}deg) scale3d(1,1,1)`,
+        }}>
         <Card
+            onMouseMove={mouse}
             id="project"
             borderRadius="10px"
             height="170px"
@@ -17,16 +48,18 @@ const Carte = ({id, title, description, imageSrc, link}) => {
             overflow="hidden"
             style={{
                 transform:
-                    window.outerWidth > 780
-                        ? isInView
+                    (window.outerWidth > 780
+                        ? (isInView
                             ? 'none'
-                            : 'translateX(100px)'
-                        : 'none',
+                            : 'translateX(100px)')
+                        : 'none'),
+
                 opacity: isInView ? 1 : 0,
                 transition: 'all 1s ease-in-out 0.7s',
             }}
         >
             <Image
+                onMouseMove={mouse}
                 id="project-image"
                 alt={title}
                 width="340px"
@@ -59,7 +92,7 @@ const Carte = ({id, title, description, imageSrc, link}) => {
                 </a>
             </CardFooter>
         </Card>
-    )
+    </div>)
 }
 
 export default Carte

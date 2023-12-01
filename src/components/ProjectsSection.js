@@ -36,6 +36,13 @@ const projects = [
             'A Traffic Signal Optimization System is a project aimed at tackling the issue of time waste in traffic by implementing an intelligent system that optimizes traffic signal timings.',
         getImageSrc: () => require('../images/nrw.png'),
         link: 'https://github.com/mehdixlabetix/NRW-Smart-Traffic-Light',
+    }, {
+        id: 4,
+        title: 'Social Media App',
+        description:
+            'A Django Framework implementation of all the core features of a social media app. You can use it as a starting point for your own social media app, or you can add your own features and customizations.',
+        getImageSrc: () => require('../images/Social-Media-App.jpeg'),
+        link: 'https://github.com/mehdixlabetix/Social-Media-App',
     },
 ]
 
