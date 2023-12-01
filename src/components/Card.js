@@ -4,7 +4,7 @@ import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import React, {useState} from 'react'
 import {useInView} from 'framer-motion'
 
-const Carte = ({id, title, description, imageSrc, link}) => {
+const Carte = ({title, description, imageSrc, link}) => {
     const ref = React.useRef(null)
     const isInView = useInView(ref, {once: true})
     const [mouseCoordinates, setMouseCoordinates] = useState({x: 0, y: 0});

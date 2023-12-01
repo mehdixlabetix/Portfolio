@@ -51,15 +51,14 @@ const ProjectsSection = () => {
         () =>
             projects.map((project) => (
                 <Carte
-                    key={project.title}
+                    key={project.id}
                     title={project.title}
                     description={project.description}
                     imageSrc={project.getImageSrc()}
                     link={project.link}
-                    id={project.id}
                 />
             )),
-        [projects]
+        []
     )
     return (
         <FullScreenSection p={8} alignItems="flex-start" spacing={8}>
