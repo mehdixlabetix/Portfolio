@@ -71,7 +71,7 @@ const Levels = () => {
                             alignItems="left"
                             spacing={1}
                             key={skill.title}
-                            paddingLeft="20%"
+                            paddingLeft="15%"
                             id="logoVstack"
                         >
                             <HStack id="logoHstack" spacing={10} alignItems="self-end">
@@ -111,6 +111,7 @@ const Levels = () => {
                 }}
                 id="skills"
                 borderRadius="40px"
+                width="90%"
             >
                 <CardBody>
                     <Heading
@@ -126,7 +127,7 @@ const Levels = () => {
                     <Box
                         id="skills-container"
                         display="grid"
-                        gridTemplateColumns="repeat(2,450px)"
+                        gridTemplateColumns="repeat(2,400px)"
                         gridGap={5}
                         alignItems="flex-end"
                         paddingBottom="20px"
