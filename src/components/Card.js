@@ -33,13 +33,17 @@ const Carte = ({title, description, imageSrc, link}) => {
         }
 
     }
+    const reset = () => {
+        setMouseCoordinates({x: cardCenter.x, y: cardCenter.y});
+    };
     return (<div
         style={{
-            transition: 'all 0.2s cubic-bezier(0.03, 0.9, 0.5, 0.8) 0s',
+            transition: 'all 0.5s cubic-bezier(0.03, 0.9, 0.5, 0.8) 0s',
             transform: `perspective(1000px) rotateX(${calculateRotationAngle().y}deg) rotateY(${calculateRotationAngle().x}deg) scale3d(1,1,1)`,
         }}>
         <Card
             onMouseMove={mouse}
+            onMouseLeave={reset}
             id="project"
             borderRadius="10px"
             height="170px"
