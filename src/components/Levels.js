@@ -98,7 +98,7 @@ const Levels = () => {
         [skills]
     )
     return (
-        <FullScreenSection id="skills-gen">
+        <FullScreenSection  id="skills-gen">
             <Card
                 ref={ref}
                 style={{
@@ -112,6 +112,7 @@ const Levels = () => {
                 id="skills"
                 borderRadius="40px"
                 width="90%"
+                marginTop="10%"
             >
                 <CardBody>
                     <Heading
@@ -131,7 +132,7 @@ const Levels = () => {
                         gridGap={5}
                         alignItems="flex-end"
                         paddingBottom="20px"
-                        paddingTop="40px"
+                        paddingTop="30px"
                     >
                         {skillsList.map((skill) => skill)}
                     </Box>

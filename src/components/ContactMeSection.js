@@ -68,7 +68,7 @@ const LandingSection = () => {
                 <HStack width="50%"
                         style={{
                             backgroundColor: 'rgba(245, 40, 145, 0.8)',
-                            borderRadius: '40px',
+                            borderRadius: '30px',
                             height: '70px',
                             marginBottom: '30px',
 

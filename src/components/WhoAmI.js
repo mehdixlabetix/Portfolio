@@ -7,7 +7,7 @@ const WhoAmI = () => {
     const ref = useRef(null)
     const isInView = useInView(ref, {once: true})
     return (
-        <FullScreenSection>
+        <FullScreenSection minHeight="70vh">
             <VStack
                 id="whoami"
                 ref={ref}
