@@ -3,6 +3,11 @@ import FullScreenSection from './FullScreenSection'
 import {Box, Heading, HStack, VStack,} from '@chakra-ui/react'
 import Carte from './Card'
 import Example from './Stepper'
+import CO2Image from '../images/CO2.jpg'
+import DamImage from '../images/dam2.jpg'
+import SocialImage from '../images/Social-Media-App.jpeg'
+import TrafficImage from '../images/nrw.png'
+import AerobotixImage from '../images/img.png'
 
 const projects = [
     {
@@ -10,7 +15,7 @@ const projects = [
         title: 'CO2 Emissions in Rwanda\n',
         description:
             'Predicting CO2 emissions in Rwanda using machine learning. The notebook imports a dataset of historical CO2 emissions data and uses a variety of machine learning models to predict future emissions.',
-        getImageSrc: () => require('../images/CO2.jpg'),
+        imageSrc:  CO2Image,
         link: 'https://github.com/mehdixlabetix/CO2EmissionRawanda',
     },
     {
@@ -18,7 +23,7 @@ const projects = [
         title: 'Aerobotix Form',
         description:
             'This is a web form built using React and connected to Firebase, designed for the Aerobotix Robotics Club. The form allows users to submit their information for membership or any other relevant purposes.',
-        getImageSrc: () => require('../images/img.png'),
+        imageSrc:  AerobotixImage,
         link: 'https://github.com/mehdixlabetix/Aerobotix',
     },
     {
@@ -26,7 +31,7 @@ const projects = [
         title: 'Tunisian Water Level Prediction',
         description:
             'A Time Series model that predicts the level of water in multiple dams around the Tunisian country using old data. The model is built using XGBoost.',
-        getImageSrc: () => require('../images/dam2.jpg'),
+        imageSrc:  DamImage,
         link: 'https://github.com/mehdixlabetix/Weather-Time-Series',
     },
     {
@@ -34,14 +39,14 @@ const projects = [
         title: 'Smart Traffic Light',
         description:
             'A Traffic Signal Optimization System is a project aimed at tackling the issue of time waste in traffic by implementing an intelligent system that optimizes traffic signal timings.',
-        getImageSrc: () => require('../images/nrw.png'),
+        imageSrc: TrafficImage,
         link: 'https://github.com/mehdixlabetix/NRW-Smart-Traffic-Light',
     }, {
         id: 4,
         title: 'Social Media App',
         description:
             'A Django Framework implementation of all the core features of a social media app. You can use it as a starting point for your own social media app, or you can add your own features and customizations.',
-        getImageSrc: () => require('../images/Social-Media-App.jpeg'),
+        imageSrc: SocialImage,
         link: 'https://github.com/mehdixlabetix/Social-Media-App',
     },
 ]
@@ -54,7 +59,7 @@ const ProjectsSection = () => {
                     key={project.id}
                     title={project.title}
                     description={project.description}
-                    imageSrc={project.getImageSrc()}
+                    imageSrc={project.imageSrc}
                     link={project.link}
                 />
             )),

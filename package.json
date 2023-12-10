@@ -22,7 +22,6 @@
     "formik": "^2.2.9",
     "framer-motion": "^7.10.3",
     "lottie-react": "^2.4.0",
-    "react-scripts": "^5.0.1",
     "react-spinners": "^0.13.8",
     "text-type-animation-effect-react": "^1.2.9",
     "vanta": "^0.5.24",
@@ -30,10 +29,8 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "tsc && vite build"
   },
   "browserslist": {
     "production": [
@@ -51,9 +48,11 @@
     "@types/lodash": "^4.14.197",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.2.1",
     "lodash": "^4.17.21",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "vite": "^5.0.7"
   }
 }

@@ -2,57 +2,67 @@ import React from 'react'
 import FullScreenSection from './FullScreenSection'
 import {Box, Card, CardBody, Heading, HStack, Image, Text, VStack,} from '@chakra-ui/react'
 import {useInView} from 'framer-motion'
+import reactImage from '../images/React.png'
+import djangoImage from '../images/django.png'
+import angularImage from '../images/angular.png'
+import nestjsImage from '../images/nestjs.png'
+import rosImage from '../images/ros.png'
+import cImage from '../images/C.png'
+import pythonImage from '../images/python.png'
+import javaImage from '../images/java.png'
+import MLImage from '../images/ML.png'
+import DLImage from '../images/DL.png'
 
 const skills = [
     {
         title: 'React ',
         progress: 85,
-        getImageSrc: () => require('../images/React.png'),
+        getImageSrc: () => reactImage,
     },
     {
         title: 'Django ',
         progress: 40,
-        getImageSrc: () => require('../images/django.png'),
+        getImageSrc: () => djangoImage,
     },
     {
         title: 'Angular ',
         progress: 80,
-        getImageSrc: () => require('../images/angular.png'),
+        getImageSrc: () => angularImage,
     },
     {
         title: 'NestJS ',
         progress: 80,
-        getImageSrc: () => require('../images/nestjs.png'),
+        getImageSrc: () => nestjsImage,
     },
     {
         title: 'ROS ',
         progress: 80,
-        getImageSrc: () => require('../images/ros.png'),
+        getImageSrc: () => rosImage,
     },
     {
         title: 'C++ ',
         progress: 90,
-        getImageSrc: () => require('../images/C.png'),
+        getImageSrc: () => cImage,
     },
     {
         title: 'Python ',
         progress: 95,
-        getImageSrc: () => require('../images/python.png'),
+        getImageSrc: () => pythonImage,
     },
     {
         title: 'Java',
         progress: 60,
-        getImageSrc: () => require('../images/java.png'),
+        getImageSrc: () => javaImage,
     },
     {
         title: 'Machine Learning',
         progress: 70,
-        getImageSrc: () => require('../images/ML.png'),
+        getImageSrc: () => MLImage,
     },
     {
         title: 'Deep Learning',
         progress: 70,
-        getImageSrc: () => require('../images/DL.png'),
+        getImageSrc: () => DLImage,
     },
 ]
 
