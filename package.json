@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "tsx && vite build"
+    "build": "vite build"
   },
   "browserslist": {
     "production": [
