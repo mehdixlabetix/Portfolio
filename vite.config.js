@@ -4,6 +4,6 @@ export default defineConfig({
     plugins: [react()]
 })
 module.exports = {
-    root:"src",
+    root:".",
     build:{outDir:"./public",},
 }
