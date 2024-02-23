@@ -1,15 +1,13 @@
 FROM node:18-alpine
-LABEL authors="mehdi"
 
-WORKDIR /
+WORKDIR /app
 
-COPY package.json ./
-COPY public ./public
-COPY src ./src
+COPY package*.json ./
 
 RUN npm install
 
+COPY . .
+
 EXPOSE 8080
 
-CMD ["npm", "run", "build"]
-CMD ["npm", "run", "serve"]
+CMD ["npm", "run", "start"]
