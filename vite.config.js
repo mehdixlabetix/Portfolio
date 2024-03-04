@@ -5,5 +5,13 @@ export default defineConfig({
     build: {
         outDir: "build",
         emptyOutDir: true,
+
     },
-})
+    server: {
+        watch: {
+            usePolling: true,
+        },
+        host: true,
+        strictPort: true,
+        port: 8080,
+}})

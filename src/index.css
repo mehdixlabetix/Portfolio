@@ -138,7 +138,7 @@ code {
 
 #egg {
     position: absolute;
-    translate: 0px 150px;
+    translate: 0 150px;
     z-index: 0;
 }
 
@@ -165,7 +165,7 @@ code {
     padding: 0 50px 0 50px;
 }
 
-contact-me {
+#contact-me {
     z-index: 3;
 }
 
@@ -211,7 +211,7 @@ contact-me {
 
 #header {
     z-index: 2;
-    height: 65.5px;
+    height: 66px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -250,7 +250,7 @@ contact-me {
     }
 
     #whoami {
-        width: 80%;
+        width: 90%;
         translate: 200px 0;
     }
 
@@ -283,7 +283,7 @@ contact-me {
         height: 70%;
         padding-right: 4px;
         border-radius: 22px;
-        box-shadow: #18181b 1px 1px 10px 0px;
+        box-shadow: #18181b 1px 1px 10px 0;
     }
 
     #skills-head {
@@ -292,6 +292,7 @@ contact-me {
 
     #skills-gen {
         width: 100%;
+        padding: 0;
     }
 
     #skills-container {
@@ -336,7 +337,7 @@ contact-me {
     }
 
     #project-body {
-        padding: 0% 10% 0% 10%;
+        padding: 0 10% 0 10%;
     }
 
     #project-title {
@@ -356,6 +357,7 @@ contact-me {
 
     #contact-me-form {
         margin: 0;
+        padding: 0;
     }
 
     #contact-me-section {

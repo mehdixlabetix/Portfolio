@@ -30,7 +30,8 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "serve": "vite preview --mode production --host"
   },
   "browserslist": {
     "production": [
