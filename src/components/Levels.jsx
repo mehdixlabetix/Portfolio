@@ -108,7 +108,7 @@ const Levels = () => {
         [skills]
     )
     return (
-        <FullScreenSection  id="skills-gen">
+        <FullScreenSection minHeight="50vh" id="skills-gen">
             <Card
                 ref={ref}
                 style={{

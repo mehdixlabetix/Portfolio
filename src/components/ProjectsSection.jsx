@@ -7,7 +7,7 @@ import CO2Image from '../images/CO2.jpg'
 import DamImage from '../images/dam2.jpg'
 import SocialImage from '../images/Social-Media-App.jpeg'
 import TrafficImage from '../images/nrw.png'
-import AerobotixImage from '../images/img.png'
+import AerobotixImage from '../images/aerobotix.jpg'
 
 const projects = [
     {
@@ -20,11 +20,11 @@ const projects = [
     },
     {
         id: 1,
-        title: 'Aerobotix Form',
+        title: 'Aerobotix Website',
         description:
             'This is a web form built using React and connected to Firebase, designed for the Aerobotix Robotics Club. The form allows users to submit their information for membership or any other relevant purposes.',
         imageSrc:  AerobotixImage,
-        link: 'https://github.com/mehdixlabetix/Aerobotix',
+        link: 'https://aerobotix.tn',
     },
     {
         id: 2,
@@ -79,7 +79,7 @@ const ProjectsSection = () => {
                 >
                     <HStack gap={128}>
                         <Example/>
-                        <VStack gap={20}>
+                        <VStack  gap={20}>
                             {projectsList.map((project) => project)}
                         </VStack>
                     </HStack>

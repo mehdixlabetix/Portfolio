@@ -34,13 +34,16 @@ const Carte = ({title, description, imageSrc, link}) => {
     const reset = () => {
         setMouseCoordinates({x: cardCenter.x, y: cardCenter.y});
     };
+    const cardWidth= window.innerWidth>760?'100%':window.innerWidth-window.innerWidth/3.7;
     return (
         <div
+               id='p'
             style={{
                 transition: 'all 0.5s cubic-bezier(0.03, 0.9, 0.5, 0.8) 0s',
                 transform: `perspective(1000px) rotateX(${
                     calculateRotationAngle().y
                 }deg) rotateY(${calculateRotationAngle().x}deg) scale3d(1,1,1)`,
+               width:cardWidth,
             }}
         >
             <Card
@@ -52,6 +55,7 @@ const Carte = ({title, description, imageSrc, link}) => {
                 ref={ref}
                 direction={{ base: 'column', sm: 'row' }}
                 overflow="hidden"
+
                 style={{
                     transform:
                         window.outerWidth > 780
@@ -87,7 +91,7 @@ const Carte = ({title, description, imageSrc, link}) => {
                         </Center>
                     </Stack>
                 </CardBody>
-                <CardFooter id="project-footer">
+                <CardFooter justifyContent='center' id="project-footer">
                     <a href={link}>
                         <HStack justifyContent="center">
                             <Text id="project-footer-text" fontSize="lg" as="b">

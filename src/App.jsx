@@ -29,7 +29,7 @@ function App() {
             minWidth: 200.0,
             zIndex: 0,
             scale: 0.7,
-            scaleMobile: 1.0,
+            scaleMobile: 2.8,
             backgroundColor: 0x2b2b2c,
         })
 
@@ -44,8 +44,8 @@ function App() {
                 minHeight: 200.00,
                 minWidth: 200.00,
                 scale: 1.00,
-                scaleMobile: 1.00,
-                maxDistance: 16.00,
+                scaleMobile: 3,
+                maxDistance:0,
                 backgroundColor: 0x2b2b2c,
             })
         }, 1500)
