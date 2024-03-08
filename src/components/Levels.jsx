@@ -108,7 +108,7 @@ const Levels = () => {
         [skills]
     )
     return (
-        <FullScreenSection minHeight="50vh" id="skills-gen">
+        <FullScreenSection marginBottom={["0%","10%"]} minHeight="50vh" id="skills-gen">
             <Card
                 ref={ref}
                 style={{

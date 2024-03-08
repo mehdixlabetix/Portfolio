@@ -10,6 +10,7 @@ import GLOBE from 'vanta/src/vanta.globe'
 import NET from 'vanta/src/vanta.net'
 import WhoAmI from './components/WhoAmI'
 import {motion} from 'framer-motion'
+import { Analytics } from '@vercel/analytics/react'
 
 
 const LazySkills = lazy(() => import('./components/Levels'))
@@ -51,50 +52,53 @@ function App() {
         }, 1500)
     }, [])
     return (
-        <ChakraProvider theme={theme}>
-            <AlertProvider>
-                <>
-                    <main id="main">
-                        <Header/>
-                        {window.innerWidth > 745 && <Scroll/>}
-                        <div id="vanta">
-                            <LandingSection/>
-                            <WhoAmI/>
-                        </div>
+        <>
+            <ChakraProvider theme={theme}>
+                <AlertProvider>
+                    <>
+                        <main id="main">
+                            <Header/>
+                            {window.innerWidth > 745 && <Scroll/>}
+                            <div id="vanta">
+                                <LandingSection/>
+                                <WhoAmI/>
+                            </div>
 
-                        <div id="vanta2">
-                            <Suspense fallback={<div> still Loading</div>}>
+                            <div id="vanta2">
+                                <Suspense fallback={<div> still Loading</div>}>
 
-                                <section>
-                                    <LazySkills/>
-                                    <LazyProjects/>
-                                </section>
+                                    <section>
+                                        <LazySkills/>
+                                        <LazyProjects/>
+                                    </section>
 
+                                </Suspense>
+
+                                <Suspense fallback={<div>hummm</div>}>
+                                    <LazyContactMe/>
+                                </Suspense>
+                            </div>
+                            <Suspense fallback={<div>omg</div>}>
+                                <LazyFooter/>
                             </Suspense>
+                            <Alert/>
+                        </main>
 
-                            <Suspense fallback={<div>hummm</div>}>
-                                <LazyContactMe/>
-                            </Suspense>
-                        </div>
-                        <Suspense fallback={<div>omg</div>}>
-                            <LazyFooter/>
-                        </Suspense>
-                        <Alert/>
-                    </main>
-
-                    <motion.div
-                        className="slide-out"
-                        initial={{scaleY: 1}}
-                        animate={{scaleY: 0}}
-                        exit={{scaleY: 0}}
-                        transition={{
-                            duration: 0.8,
-                            ease: [0.8, 0.2, 0.2, 1],
-                        }}
-                    />
-                </>
-            </AlertProvider>
-        </ChakraProvider>
+                        <motion.div
+                            className="slide-out"
+                            initial={{scaleY: 1}}
+                            animate={{scaleY: 0}}
+                            exit={{scaleY: 0}}
+                            transition={{
+                                duration: 0.8,
+                                ease: [0.8, 0.2, 0.2, 1],
+                            }}
+                        />
+                    </>
+                </AlertProvider>
+            </ChakraProvider>
+            <Analytics/>
+        </>
     )
 }
 
