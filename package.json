@@ -30,7 +30,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "vite",
+    "start": "vite --force",
     "build": "vite build",
     "serve": "vite preview --mode production --host"
   },

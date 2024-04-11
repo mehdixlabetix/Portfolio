@@ -7,6 +7,9 @@ export default defineConfig({
         emptyOutDir: true,
 
     },
+    optimizeDeps: {
+        exclude: ["@chakra-ui", "@emotion/react", "@emotion/styled", "framer-motion"],
+    },
     server: {
         watch: {
             usePolling: true,
