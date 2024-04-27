@@ -89,7 +89,7 @@ const Header = () => {
                         <HStack spacing={8}>
                             <a href="#skills-gen">Skills</a>
                             <a href="#projects-section">Projects</a>
-                            <a href='/Mehdi_Cherif_EN.pdf' ref='noopener noreferrer' target='_blank'>Resume</a>
+                            <a href='/Mehdi_Cherif_EN.pdf' target="_blank" rel="noreferrer">Resume</a>
                             <a href="#contact-me-section">Contact me</a>
                         </HStack>
                     </nav>
