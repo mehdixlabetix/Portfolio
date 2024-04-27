@@ -1,5 +1,5 @@
 import React from 'react'
-import {Heading, Image, Text, VStack} from '@chakra-ui/react'
+import { Heading, Image, Text, VStack } from '@chakra-ui/react'
 import FullScreenSection from './FullScreenSection'
 import TextTyper from './TextTyper'
 
@@ -22,12 +22,21 @@ const LandingSection = () => {
                 <Heading
                     id="landing-text"
                     marginTop="45px"
-                    style={{fontFamily: 'Laila', whiteSpace: 'pre-wrap'}}
+                    style={{ fontFamily: 'Laila', whiteSpace: 'pre-wrap' }}
                     size="xl"
                 >
                     <center>
-                        <h2>Hello, I am <span
-                            style={{color: 'rgba(250, 47, 142, 1)', fontWeight: 'bold'}}>Mehdi !</span></h2>
+                        <h2>
+                            Hello, I am{' '}
+                            <span
+                                style={{
+                                    color: 'rgba(250, 47, 142, 1)',
+                                    fontWeight: 'bold',
+                                }}
+                            >
+                                Mehdi !
+                            </span>
+                        </h2>
                         <TextTyper
                             text={bio1 + '\n' + bio2}
                             interval={100}

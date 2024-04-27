@@ -1,49 +1,60 @@
-import {Card, CardBody, CardFooter, Center, Heading, HStack, Image, Stack, Text} from '@chakra-ui/react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
-import React, {useState} from 'react'
-import {useInView} from 'framer-motion'
+import {
+    Card,
+    CardBody,
+    CardFooter,
+    Center,
+    Heading,
+    HStack,
+    Image,
+    Stack,
+    Text,
+} from '@chakra-ui/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from 'react'
+import { useInView } from 'framer-motion'
 
-const Carte = ({title, description, imageSrc, link}) => {
+const Carte = ({ title, description, imageSrc, link }) => {
     const ref = React.useRef(null)
-    const isInView = useInView(ref, {once: true})
-    const [mouseCoordinates, setMouseCoordinates] = useState({x: 0, y: 0});
-    const [cardCenter, setCardCenter] = useState({x: 0, y: 0}); // Initialize cardCenter
+    const isInView = useInView(ref, { once: true })
+    const [mouseCoordinates, setMouseCoordinates] = useState({ x: 0, y: 0 })
+    const [cardCenter, setCardCenter] = useState({ x: 0, y: 0 }) // Initialize cardCenter
 
     const calculateRotationAngle = () => {
-
         const deltaX = mouseCoordinates.x - cardCenter.x
         const deltaY = mouseCoordinates.y - cardCenter.y
-        return ({x: -deltaX / 60, y: deltaY / 5})
+        return { x: -deltaX / 60, y: deltaY / 5 }
     }
     const mouse = (event) => {
         setMouseCoordinates({
             x: event.clientX,
-            y: event.clientY
-        });
+            y: event.clientY,
+        })
         if (ref.current) {
             const cardPosition = ref.current.getBoundingClientRect()
             const newCardCenter = {
                 x: cardPosition.left + cardPosition.width / 2,
-                y: cardPosition.top + cardPosition.height / 2
+                y: cardPosition.top + cardPosition.height / 2,
             }
-            setCardCenter(newCardCenter);
+            setCardCenter(newCardCenter)
         }
-
     }
     const reset = () => {
-        setMouseCoordinates({x: cardCenter.x, y: cardCenter.y});
-    };
-    const cardWidth= window.innerWidth>760?'100%':window.innerWidth-window.innerWidth/3.7;
+        setMouseCoordinates({ x: cardCenter.x, y: cardCenter.y })
+    }
+    const cardWidth =
+        window.innerWidth > 760
+            ? '100%'
+            : window.innerWidth - window.innerWidth / 3.7
     return (
         <div
-               id='p'
+            id="p"
             style={{
                 transition: 'all 0.5s cubic-bezier(0.03, 0.9, 0.5, 0.8) 0s',
                 transform: `perspective(1000px) rotateX(${
                     calculateRotationAngle().y
                 }deg) rotateY(${calculateRotationAngle().x}deg) scale3d(1,1,1)`,
-               width:cardWidth,
+                width: cardWidth,
             }}
         >
             <Card
@@ -55,7 +66,6 @@ const Carte = ({title, description, imageSrc, link}) => {
                 ref={ref}
                 direction={{ base: 'column', sm: 'row' }}
                 overflow="hidden"
-
                 style={{
                     transform:
                         window.outerWidth > 780
@@ -75,7 +85,7 @@ const Carte = ({title, description, imageSrc, link}) => {
                     width="340px"
                     objectFit="fill"
                     maxW={{ base: '100%', sm: '400px' }}
-                    src={ imageSrc }
+                    src={imageSrc}
                     borderRadius="10px 0px 0px 10px"
                 />
 
@@ -91,7 +101,7 @@ const Carte = ({title, description, imageSrc, link}) => {
                         </Center>
                     </Stack>
                 </CardBody>
-                <CardFooter justifyContent='center' id="project-footer">
+                <CardFooter justifyContent="center" id="project-footer">
                     <a href={link}>
                         <HStack justifyContent="center">
                             <Text id="project-footer-text" fontSize="lg" as="b">

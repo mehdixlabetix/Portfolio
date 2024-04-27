@@ -1,6 +1,6 @@
-import {useState} from 'react'
-import {db} from '../components/firebase'
-import {doc, setDoc} from 'firebase/firestore'
+import { useState } from 'react'
+import { db } from '../components/firebase'
+import { doc, setDoc } from 'firebase/firestore'
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -36,7 +36,7 @@ const useSubmit = () => {
         }
     }
 
-    return {isLoading, response, submit}
+    return { isLoading, response, submit }
 }
 
 export default useSubmit

@@ -1,7 +1,16 @@
 import React from 'react'
 import FullScreenSection from './FullScreenSection'
-import {Box, Card, CardBody, Heading, HStack, Image, Text, VStack,} from '@chakra-ui/react'
-import {useInView} from 'framer-motion'
+import {
+    Box,
+    Card,
+    CardBody,
+    Heading,
+    HStack,
+    Image,
+    Text,
+    VStack,
+} from '@chakra-ui/react'
+import { useInView } from 'framer-motion'
 import reactImage from '../images/React.png'
 import djangoImage from '../images/django.png'
 import angularImage from '../images/angular.png'
@@ -68,7 +77,7 @@ const skills = [
 
 const Levels = () => {
     const ref = React.useRef(null)
-    const isInView = useInView(ref, {once: true})
+    const isInView = useInView(ref, { once: true })
     const skillsList = React.useMemo(
         () =>
             skills
@@ -84,7 +93,11 @@ const Levels = () => {
                             paddingLeft="15%"
                             id="logoVstack"
                         >
-                            <HStack id="logoHstack" spacing={10} alignItems="self-end">
+                            <HStack
+                                id="logoHstack"
+                                spacing={10}
+                                alignItems="self-end"
+                            >
                                 <Image
                                     id="logos"
                                     objectPosition="center"
@@ -108,7 +121,11 @@ const Levels = () => {
         [skills]
     )
     return (
-        <FullScreenSection marginBottom={["0%","10%"]} minHeight="50vh" id="skills-gen">
+        <FullScreenSection
+            marginBottom={['0%', '10%']}
+            minHeight="50vh"
+            id="skills-gen"
+        >
             <Card
                 ref={ref}
                 style={{

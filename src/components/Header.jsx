@@ -1,8 +1,8 @@
-import React, {useEffect, useRef} from 'react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
-import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
-import {Box, HStack} from '@chakra-ui/react'
+import React, { useEffect, useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { Box, HStack } from '@chakra-ui/react'
 
 const socials = [
     {
@@ -10,7 +10,7 @@ const socials = [
         icon: faEnvelope,
         url: 'mailto:mehdi.cherif@insat.ucar.tn',
     },
-    {name: 'Github', icon: faGithub, url: 'https://github.com/mehdixlabetix'},
+    { name: 'Github', icon: faGithub, url: 'https://github.com/mehdixlabetix' },
     {
         name: 'Linkedin',
         icon: faLinkedin,
@@ -89,6 +89,7 @@ const Header = () => {
                         <HStack spacing={8}>
                             <a href="#skills-gen">Skills</a>
                             <a href="#projects-section">Projects</a>
+                            <a href='/Mehdi_Cherif_EN.pdf' ref='noopener noreferrer' target='_blank'>Resume</a>
                             <a href="#contact-me-section">Contact me</a>
                         </HStack>
                     </nav>

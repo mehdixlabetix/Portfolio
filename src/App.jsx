@@ -1,17 +1,16 @@
-import {ChakraProvider} from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import Header from './components/Header'
 import LandingSection from './components/LandingSection'
-import {AlertProvider} from './context/alertContext'
+import { AlertProvider } from './context/alertContext'
 import Alert from './components/Alert'
 import Scroll from './components/Scroll'
-import {lazy, Suspense, useEffect} from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import theme from './components/Theme'
 import GLOBE from 'vanta/src/vanta.globe'
 import NET from 'vanta/src/vanta.net'
 import WhoAmI from './components/WhoAmI'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Analytics } from '@vercel/analytics/react'
-
 
 const LazySkills = lazy(() => import('./components/Levels'))
 const LazyProjects = lazy(() => import('./components/ProjectsSection'))
@@ -20,7 +19,6 @@ const LazyFooter = lazy(() => import('./components/Footer'))
 
 function App() {
     useEffect(() => {
-
         GLOBE({
             el: '#vanta',
             mouseControls: true,
@@ -33,20 +31,19 @@ function App() {
             scaleMobile: 2.8,
             backgroundColor: 0x2b2b2c,
         })
-
     }, [])
     useEffect(() => {
         setTimeout(() => {
             NET({
-                el: "#vanta2",
+                el: '#vanta2',
                 mouseControls: true,
                 touchControls: true,
                 gyroControls: false,
-                minHeight: 200.00,
-                minWidth: 200.00,
-                scale: 1.00,
+                minHeight: 200.0,
+                minWidth: 200.0,
+                scale: 1.0,
                 scaleMobile: 3,
-                maxDistance:0,
+                maxDistance: 0,
                 backgroundColor: 0x2b2b2c,
             })
         }, 1500)
@@ -57,38 +54,36 @@ function App() {
                 <AlertProvider>
                     <>
                         <main id="main">
-                            <Header/>
-                            {window.innerWidth > 745 && <Scroll/>}
+                            <Header />
+                            {window.innerWidth > 745 && <Scroll />}
                             <div id="vanta">
-                                <LandingSection/>
-                                <WhoAmI/>
+                                <LandingSection />
+                                <WhoAmI />
                             </div>
 
                             <div id="vanta2">
                                 <Suspense fallback={<div> still Loading</div>}>
-
                                     <section>
-                                        <LazySkills/>
-                                        <LazyProjects/>
+                                        <LazySkills />
+                                        <LazyProjects />
                                     </section>
-
                                 </Suspense>
 
                                 <Suspense fallback={<div>hummm</div>}>
-                                    <LazyContactMe/>
+                                    <LazyContactMe />
                                 </Suspense>
                             </div>
                             <Suspense fallback={<div>omg</div>}>
-                                <LazyFooter/>
+                                <LazyFooter />
                             </Suspense>
-                            <Alert/>
+                            <Alert />
                         </main>
 
                         <motion.div
                             className="slide-out"
-                            initial={{scaleY: 1}}
-                            animate={{scaleY: 0}}
-                            exit={{scaleY: 0}}
+                            initial={{ scaleY: 1 }}
+                            animate={{ scaleY: 0 }}
+                            exit={{ scaleY: 0 }}
                             transition={{
                                 duration: 0.8,
                                 ease: [0.8, 0.2, 0.2, 1],
@@ -97,7 +92,7 @@ function App() {
                     </>
                 </AlertProvider>
             </ChakraProvider>
-            <Analytics/>
+            <Analytics />
         </>
     )
 }

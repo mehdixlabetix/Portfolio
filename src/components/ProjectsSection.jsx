@@ -1,6 +1,6 @@
 import React from 'react'
 import FullScreenSection from './FullScreenSection'
-import {Box, Heading, HStack, VStack,} from '@chakra-ui/react'
+import { Box, Heading, HStack, VStack } from '@chakra-ui/react'
 import Carte from './Card'
 import Example from './Stepper'
 import CO2Image from '../images/CO2.jpg'
@@ -15,7 +15,7 @@ const projects = [
         title: 'CO2 Emissions in Rwanda\n',
         description:
             'Predicting CO2 emissions in Rwanda using machine learning. The notebook imports a dataset of historical CO2 emissions data and uses a variety of machine learning models to predict future emissions.',
-        imageSrc:  CO2Image,
+        imageSrc: CO2Image,
         link: 'https://github.com/mehdixlabetix/CO2EmissionRawanda',
     },
     {
@@ -23,7 +23,7 @@ const projects = [
         title: 'Aerobotix Website',
         description:
             'This is a web form built using React and connected to Firebase, designed for the Aerobotix Robotics Club. The form allows users to submit their information for membership or any other relevant purposes.',
-        imageSrc:  AerobotixImage,
+        imageSrc: AerobotixImage,
         link: 'https://aerobotix.tn',
     },
     {
@@ -31,7 +31,7 @@ const projects = [
         title: 'Tunisian Water Level Prediction',
         description:
             'A Time Series model that predicts the level of water in multiple dams around the Tunisian country using old data. The model is built using XGBoost.',
-        imageSrc:  DamImage,
+        imageSrc: DamImage,
         link: 'https://github.com/mehdixlabetix/Weather-Time-Series',
     },
     {
@@ -41,7 +41,8 @@ const projects = [
             'A Traffic Signal Optimization System is a project aimed at tackling the issue of time waste in traffic by implementing an intelligent system that optimizes traffic signal timings.',
         imageSrc: TrafficImage,
         link: 'https://github.com/mehdixlabetix/NRW-Smart-Traffic-Light',
-    }, {
+    },
+    {
         id: 4,
         title: 'Social Media App',
         description:
@@ -71,15 +72,16 @@ const ProjectsSection = () => {
                 <Heading as="h1" id="projects-section-head">
                     Featured Projects
                 </Heading>
-                <Box p={2}
-                     id="projects-container"
-                     display="grid"
-                     gridTemplateColumns="repeat(1,minmax(0,0.8fr))"
-                     gridGap={30}
+                <Box
+                    p={2}
+                    id="projects-container"
+                    display="grid"
+                    gridTemplateColumns="repeat(1,minmax(0,0.8fr))"
+                    gridGap={30}
                 >
                     <HStack gap={128}>
-                        <Example/>
-                        <VStack  gap={20}>
+                        <Example />
+                        <VStack gap={20}>
                             {projectsList.map((project) => project)}
                         </VStack>
                     </HStack>
