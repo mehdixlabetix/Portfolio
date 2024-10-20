@@ -6,6 +6,7 @@ import TextTyper from './TextTyper'
 const bio1 = 'An AI enthusiast and a full-stack developer'
 const bio2 = 'specialised in React and NestJS'
 const avatarsrc = 'images/mehdi.jpg'
+
 const LandingSection = () => {
     return (
         <FullScreenSection justifyContent="center" alignItems="center">
