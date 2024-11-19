@@ -17,7 +17,7 @@
         "@types/jest": "^29.5.4",
         "@types/node": "^20.5.7",
         "@vercel/analytics": "^1.2.2",
-        "firebase": "^10.3.0",
+        "firebase": "^10.9.0",
         "formik": "^2.2.9",
         "framer-motion": "^7.10.3",
         "lottie-react": "^2.4.0",
