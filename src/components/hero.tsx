@@ -96,7 +96,7 @@ export function Hero() {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">Mehdi</h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-accent-muted">Hello, I&apos;m <span className="text-white">Mehdi</span></h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4">Software Engineer & AI Enthusiast</p>
 

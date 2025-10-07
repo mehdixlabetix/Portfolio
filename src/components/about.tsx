@@ -35,7 +35,7 @@ export function About() {
 
           <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
             <p>
-              I'm a student studying software engineering at <span className="text-foreground font-medium">INSAT</span>.
+              I&apos;m a student studying software engineering at <span className="text-foreground font-medium">INSAT</span>.
               I have a passion for both AI and full-stack development. I find joy in working on the front and back end
               aspects of software development, all while continuously learning and embracing the excitement that comes
               with it.
