@@ -92,7 +92,7 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6 inline-block">
             <div className="w-48 h-48 rounded-full bg-gradient-to-br from-accent to-primary mx-auto mb-6 flex items-center justify-center text-6xl">
-              <Image className="w-48 h-48 rounded-full" src="/images/mehdi.jpg" alt="Mehdi" width={128} height={128} />
+              <Image priority className="w-full h-full rounded-full" src="/images/mehdi.jpg" alt="Mehdi" width={128} height={128} />
             </div>
           </div>
 

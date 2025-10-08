@@ -1,11 +1,18 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink } from "lucide-react"
-import Image from "next/image"
+import { useEffect, useRef, useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -49,73 +56,75 @@ const projects = [
     title: "Social Media App",
     description:
       "A Django Framework implementation of all the core features of a social media app. You can use it as a starting point for your own social media app, or you can add your own features and customizations.",
-    image: "/images/Social-Media-App.jpeg",
+    image: "/images/social.jpg",
     tags: ["Django", "Python", "Full Stack"],
     link: "https://github.com/mehdixlabetix/Social-Media-App",
   },
-]
+];
 
 export function Projects() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-  const [isPaused, setIsPaused] = useState(false)
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const scrollPositionRef = useRef(0)
-  const animationFrameRef = useRef<number>(0)
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollPositionRef = useRef(0);
+  const animationFrameRef = useRef<number>(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
-    const scrollContainer = scrollRef.current
-    if (!scrollContainer) return
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
 
-    const scrollSpeed = 1 // pixels per frame
+    const scrollSpeed = 1; // pixels per frame
 
     const animate = () => {
       if (!isPaused) {
-        scrollPositionRef.current += scrollSpeed
+        scrollPositionRef.current += scrollSpeed;
 
         // Reset scroll position when we've scrolled past the first set of items
         if (scrollPositionRef.current >= scrollContainer.scrollWidth / 2) {
-          scrollPositionRef.current = 0
+          scrollPositionRef.current = 0;
         }
 
-        scrollContainer.scrollLeft = scrollPositionRef.current
+        scrollContainer.scrollLeft = scrollPositionRef.current;
       }
 
-      animationFrameRef.current = requestAnimationFrame(animate)
-    }
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
 
-    animationFrameRef.current = requestAnimationFrame(animate)
+    animationFrameRef.current = requestAnimationFrame(animate);
 
     return () => {
       if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current)
+        cancelAnimationFrame(animationFrameRef.current);
       }
-    }
-  }, [isPaused])
+    };
+  }, [isPaused]);
 
-  const duplicatedProjects = [...projects, ...projects]
+  const duplicatedProjects = [...projects, ...projects];
 
   return (
     <section id="projects" ref={sectionRef} className="py-24 md:py-32">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">Featured Projects</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+          Featured Projects
+        </h2>
 
         <div className="relative">
           <div
@@ -123,12 +132,18 @@ export function Projects() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div ref={scrollRef} className="flex gap-8 overflow-x-hidden" style={{ scrollBehavior: "auto" }}>
+            <div
+              ref={scrollRef}
+              className="flex gap-8 overflow-x-hidden px-24 -mx-8"
+              style={{ scrollBehavior: "auto" }}
+            >
               {duplicatedProjects.map((project, index) => (
                 <Card
                   key={`${project.id}-${index}`}
-                  className={`flex flex-col group min-h-[500px] hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-accent/5 border-accent/20 hover:border-accent/50 flex-shrink-0 w-[350px] ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                  className={`flex flex-col group min-h-[500px] hover:scale-110 hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-accent/5 border-accent/20 hover:border-accent/50 flex-shrink-0 w-[350px] ${
+                    isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-12"
                   }`}
                 >
                   <CardHeader className="p-0">
@@ -137,26 +152,41 @@ export function Projects() {
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover transition-transform duration-500"
                       />
                     </div>
                   </CardHeader>
                   <CardContent className="flex-1 p-6">
-                    <CardTitle className="mb-3 text-xl group-hover:text-accent transition-colors">
+                    <CardTitle className="mb-3 text-xl text-accent group-hover:text-white transition-colors">
                       {project.title}
                     </CardTitle>
-                    <CardDescription className="text-sm leading-relaxed mb-4">{project.description}</CardDescription>
+                    <CardDescription className="text-sm leading-relaxed mb-4">
+                      {project.description}
+                    </CardDescription>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className="text-xs">
+                        <Badge
+                          key={tag}
+                          variant="secondary"
+                          className="text-xs"
+                        >
                           {tag}
                         </Badge>
                       ))}
                     </div>
                   </CardContent>
                   <CardFooter className="p-6 pt-0">
-                    <Button variant="outline" className="w-full group/btn bg-transparent" asChild>
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      className="w-full group/btn bg-transparent"
+                      asChild
+                    >
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors text-accent group-hover:text-white"
+                      >
                         View Project
                         <ExternalLink className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </a>
@@ -172,5 +202,5 @@ export function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
